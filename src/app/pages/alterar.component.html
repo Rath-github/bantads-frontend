@@ -1,0 +1,16 @@
+<div>
+  <h2>Perfil do Cliente</h2>
+
+  <p>Nome: {{ cliente.nome }}</p>
+  <p>CPF: {{ cliente.cpf }}</p>
+  <p>Salário: {{ cliente.salario | currency }}</p>
+  <p>Limite: {{ cliente.limite | currency }}</p>
+  <p>Saldo Negativo: {{ cliente.saldoNegativo | currency }}</p>
+  <p>Gerente: {{ gerente }}</p>
+
+  <div>
+    <label for="novoSalario">Novo Salário:</label>
+    <input type="number" id="novoSalario" [(ngModel)]="novoSalario" />
+    <button (click)="salvarAlteracoes(novoSalario)">Salvar Alterações</button>
+  </div>
+</div>
