@@ -1,0 +1,27 @@
+<main class="h-screen bg-zinc-50 flex items-center justify-center">
+    <form  class="flex flex-col gap-4 w-full max-w-xs">
+      <h1>Autocadastro</h1>
+      <div class="flex flex-col gap-1">
+        <label for="">Nome</label>
+        <input type="text" formControlName="nome" class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="">E-mail</label>
+        <input type="email" formControlName="email" maxlength="60" class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="">CPF</label>
+        <input type="text" formControlName="cpf" mask="000.000.000-00" class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="">Telefone</label>
+        <input type="text" formControlName="telefone" mask="(00) 0000-0000" class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="">Salário</label>
+        <input type="text" formControlName="salario" mask="R$ 0.000,00" class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+      </div>
+      <button type="submit"  class="bg-emerald-500 rounded font-semibold text-white h-10 hover:bg-emerald-600">Cadastrar</button>
+      <div class="text-green-500">mensagem status</div>
+    </form>
+</main>
