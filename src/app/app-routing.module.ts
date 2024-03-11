@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { AlterarPerfilComponent } from './alterar-perfil/alterar-perfil.component'; 
 
-const routes: Routes = [];
+const routes: Routes = [
+    { path: 'alterar-perfil', component: AlterarPerfilComponent } 
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
