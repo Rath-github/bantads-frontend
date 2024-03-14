@@ -1,17 +1,50 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "clientes": [
+    {
+      "nome": "João Silva",
+      "email": "joao@example.com",
+      "cpf": "123.456.789-10",
+      "endereco": {
+        "tipo": "Rua",
+        "logradouro": "Rua das Flores",
+        "numero": "123",
+        "complemento": "Apto 101",
+        "cep": "12345-678",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "telefone": "(11) 99999-9999",
+      "salario": 2000.00
+    },
+    {
+      "nome": "Maria Oliveira",
+      "email": "maria@example.com",
+      "cpf": "987.654.321-10",
+      "endereco": {
+        "tipo": "Avenida",
+        "logradouro": "Avenida Central",
+        "numero": "456",
+        "complemento": "Casa",
+        "cep": "54321-987",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ"
+      },
+      "telefone": "(21) 88888-8888",
+      "salario": 3000.00
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-
-  "gerente": {
-    "name": "typicode"
-  }
+  "gerentes": [
+    {
+      "nome": "Carlos Santos",
+      "email": "carlos@example.com",
+      "cpf": "111.222.333-44",
+      "telefone": "(11) 77777-7777"
+    },
+    {
+      "nome": "Ana Oliveira",
+      "email": "ana@example.com",
+      "cpf": "555.666.777-88",
+      "telefone": "(21) 66666-6666"
+    }
+  ]
 }
