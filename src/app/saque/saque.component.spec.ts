@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlterarPerfilComponent } from './alterar-perfil.component';
+import { SaqueComponent } from './saque.component';
 
-describe('AlterarPerfilComponent', () => {
-  let component: AlterarPerfilComponent;
-  let fixture: ComponentFixture<AlterarPerfilComponent>;
+describe('SaqueComponent', () => {
+  let component: SaqueComponent;
+  let fixture: ComponentFixture<SaqueComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlterarPerfilComponent]
+      imports: [SaqueComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AlterarPerfilComponent);
+    fixture = TestBed.createComponent(SaqueComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

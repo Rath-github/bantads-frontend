@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AlterarPerfilComponent } from './alterar-perfil/alterar-perfil.component'; 
 
-const routes: Routes = [
-    { path: 'alterar-perfil', component: AlterarPerfilComponent } 
-];
+import { RouterModule, Routes } from '@angular/router';
+import { SaqueComponent } from './saque/saque.component';
+const routes: Routes = [{ path: 'saque', component: SaqueComponent } ];
+
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

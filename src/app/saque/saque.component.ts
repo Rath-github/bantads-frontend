@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './saque.component.html',
-  styleUrls: ['./saque.component.css'] // Correção: styleUrls em vez de styleUrl
+  styleUrl: './saque.component.css'
 })
-export class AppComponent {
-  title = 'bantads';
+export class SaqueComponent {
+
 }
