@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Consulta de Extrato</h1>
+  <div class="filtro">
+    <label for="dataInicio">Data de Início:</label>
+    <input type="date" id="dataInicio"><br><br>
+    <label for="dataFim">Data de Fim:</label>
+    <input type="date" id="dataFim"><br><br>
+    <button (click)="consultarExtrato()">Consultar</button>
+  </div>
+  <div *ngIf="extrato.length > 0" class="extrato">
+    <h2>Extrato:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Operação</th>
+          <th>Cliente Origem/Destino</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transacao of extrato">
+          <td>{{ transacao.dataHora }}</td>
+          <td [ngClass]="{'saida': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'entrada': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}">{{ transacao.operacao }}</td>
+          <td>{{ transacao.cliente }}</td>
+          <td [ngClass]="{'saida': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'entrada': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}">{{ transacao.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

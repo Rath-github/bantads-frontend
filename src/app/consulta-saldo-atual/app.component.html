@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Consulta de Saldo</h1>
+  <div class="saldo">
+    <p>Seu saldo atual é: <strong>{{ saldo | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
+    <button (click)="consultarSaldo()">Consultar Saldo</button>
+  </div>
+</div>

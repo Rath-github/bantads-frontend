@@ -1,0 +1,61 @@
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filtro label {
+  margin-right: 10px;
+}
+
+.filtro input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filtro button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtro button:hover {
+  background-color: #0056b3;
+}
+
+.extrato table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.extrato th, .extrato td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.extrato th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+.extrato .saida {
+  color: red;
+}
+
+.extrato .entrada {
+  color: blue;
+}
