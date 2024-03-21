@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "server": "json-server db.json",
+    "server": "json-server --watch db.json",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
