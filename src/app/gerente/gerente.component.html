@@ -1,0 +1,26 @@
+<div>
+    <h2>Tela Inicial do Gerente</h2>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>Salário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pedido of pedidosAutocadastro">
+          <td>{{ pedido.cpf }}</td>
+          <td>{{ pedido.nome }}</td>
+          <td>{{ pedido.salario | currency }}</td>
+          <td>
+            <button (click)="aprovarCliente(pedido.cpf)">Aprovar</button>
+            <button (click)="reprovarCliente(pedido.cpf)">Recusar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
