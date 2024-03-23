@@ -9,7 +9,7 @@ import { Gerente } from 'src/app/models/gerente.model';
 export class GerenciarGerenteComponent {
 
   //dados ficticios para teste
-  gerente : Gerente[] = [
+  gerentes : Gerente[] = [
     {
       nome : 'Maria',
       cpf : '111.222.333-44' ,
@@ -30,13 +30,44 @@ export class GerenciarGerenteComponent {
     email : '',
     telefone : 0,
 };
+
+gerenteSelecionado = {
+  nome : '',
+  cpf  : '',
+  email : '',
+  telefone : 0,
+};
+
+mostrarNovo : boolean = false;
+mostrarEditar : boolean = false;
   
 
-  AdicionarGerente(){
+  adicionarGerente(){
+    console.log(this.novoGerente.cpf);
+    this.gerentes.push(this.novoGerente);
+    this.mostrarNovo = false;
 
-    
   }
 
- 
+  remover(cpf : string, nome : string){
+    if (confirm(`Deseja realmente remover o/a ${nome} como gerente?`)) {
+      this.gerentes = this.gerentes.filter(Gerente=> Gerente.cpf != cpf);
+      }
+  }
 
+  selecionarEditar(cpf: string){
+    this.gerenteSelecionado = this.gerentes.find((gerente) => gerente.cpf === cpf) || new Gerente();
+    
+    this.mostrarEditar = true;
+    this.mostrarNovo=false;
+    
+    this.novoGerente = { ...this.gerenteSelecionado }; // o operador ... (spread) cria uma copia do conteudo da variavel sem que elas compartilhem do mesmo objeto 
+  }
+
+  editarGerente(){
+    const index = this.gerentes.findIndex((gerente) => gerente.cpf === this.gerenteSelecionado.cpf);
+    this.gerenteSelecionado = this.novoGerente ; 
+    this.gerentes[index] = this.gerenteSelecionado; 
+    this.mostrarEditar = false;
+  }
 }
