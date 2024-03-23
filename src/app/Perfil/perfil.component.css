@@ -1,0 +1,13 @@
+table {
+    @apply w-full border-collapse;
+  }
+  
+  th, td {
+    @apply border text-left px-4 py-2;
+  }
+  
+  th {
+    @apply bg-gray-100;
+  }
+  
+  
