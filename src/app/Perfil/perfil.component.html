@@ -18,6 +18,46 @@
         <label for="valorDeposito">Valor para Depósito:</label>
         <input type="number" id="valorDeposito" [(ngModel)]="valorDeposito" />
         <button (click)="depositar(valorDeposito)">Depositar</button>
-      </div>
+    </div>
 
+    <div>
+    <h3>Transferência</h3>
+    <label for="contaDestino">Conta Destino:</label>
+    <input type="text" id="contaDestino" [(ngModel)]="contaDestino" />
+    <label for="valorTransferencia">Valor:</label>
+    <input type="number" id="valorTransferencia" [(ngModel)]="valorTransferencia" />
+    <button (click)="transferir(contaDestino, valorTransferencia)">Transferir</button>
+  </div>
+
+  <div>
+    <h3>Consulta de Extrato</h3>
+    <label for="dataInicio">Data Início:</label>
+    <input type="date" id="dataInicio" [(ngModel)]="dataInicio" />
+    <label for="dataFim">Data Fim:</label>
+    <input type="date" id="dataFim" [(ngModel)]="dataFim" />
+    <button (click)="consultarExtrato(dataInicio, dataFim)">Consultar Extrato</button>
+  </div>
+
+  <div *ngIf="extrato.length > 0">
+    <h3>Extrato</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Data/Hora</th>
+          <th>Tipo</th>
+          <th>Origem/Destino</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transacao of extrato">
+          <td>{{ transacao.dataHora | date }}</td>
+          <td [ngStyle]="{'color': transacao.valor < 0 ? 'red' : 'blue'}">{{ transacao.tipo }}</td>
+          <td>{{ transacao.origemDestino }}</td>
+          <td>{{ transacao.valor | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Saldo Consolidado: {{ saldoConsolidado | currency }}</p>
+  </div>
 </div>  
