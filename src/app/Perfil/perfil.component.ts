@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 
+interface Transacao {
+  dataHora: Date;
+  tipo: string;
+  origemDestino: string;
+  valor: number;
+}
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -16,7 +23,10 @@ export class PerfilComponent {
 
   gerente = 'Maria Souza';
   valorDeposito: number = 0;
-
+  
+  extrato: Transacao[] = [];
+  saldoConsolidado: number = 0;
+  
   salvarAlteracoes(novoSalario: number): void {
     // Verifica se houve alteração no salário
     if (novoSalario !== this.cliente.salario) {
@@ -37,6 +47,28 @@ export class PerfilComponent {
         this.cliente.saldoNegativo += valor;
       }      
 
-    // Pode adicionar aqui lógicas adicionais de salvamento ou exibição de mensagens
+  transferir(destino: string, valor: number): void {
+    this.cliente.saldoNegativo -= valor;
+    this.extrato.push({
+      dataHora: new Date(),
+      tipo: 'Transferência',
+      origemDestino: destino,
+      valor: valor
+    });
+  }
+
+  consultarExtrato(dataInicio: Date, dataFim: Date): void {
+    this.saldoConsolidado = 0;
+    const extratoFiltrado = this.extrato.filter(transacao => {
+      return transacao.dataHora >= dataInicio && transacao.dataHora <= dataFim;
+    });
+    extratoFiltrado.forEach(transacao => {
+      if (transacao.valor < 0) {
+        transacao.tipo = 'Saque/Transferência';
+      } else {
+        transacao.tipo = 'Depósito/Transferência';
+      }
+      this.saldoConsolidado += transacao.valor;
+    });
   }
 }
