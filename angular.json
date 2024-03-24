@@ -11,6 +11,12 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "allowedCommonJsDependencies": [
+            "jspdf-autotable",
+            "jspdf",
+            "raf",
+            "core-js"
+          ],
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/bantads",
@@ -26,8 +32,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "scripts": []
+            ]
+
           },
           "configurations": {
             "production": {
