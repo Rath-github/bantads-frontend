@@ -1,0 +1,62 @@
+{
+  "clientes": [
+    {
+      "nome": "João Silva",
+      "email": "joao@example.com",
+      "cpf": "123.456.789-10",
+      "endereco": {
+        "tipo": "Rua",
+        "logradouro": "Rua das Flores",
+        "numero": "123",
+        "complemento": "Apto 101",
+        "cep": "12345-678",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "gerente" : "Ana Oliveira",
+      "telefone": "(11) 99999-9999",
+      "salario": 2000.00,
+      "limite" : 1000.00,
+      "saldo" : 4000.00
+    },
+    {
+      "nome": "Maria Oliveira",
+      "email": "maria@example.com",
+      "cpf": "987.654.321-10",
+      "endereco": {
+        "tipo": "Avenida",
+        "logradouro": "Avenida Central",
+        "numero": "456",
+        "complemento": "Casa",
+        "cep": "54321-987",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ"
+      },
+      "gerente" : "Ana Oliveira",
+      "telefone": "(21) 88888-8888",
+      "salario": 3000.00,
+      "limite" : 1500.00,
+      "saldo" : 4000.00
+    }
+  ],
+  "gerentes": [
+    {
+      "nome": "Carlos Santos",
+      "email": "carlos@example.com",
+      "cpf": "111.222.333-44",
+      "telefone": "(11) 77777-7777"
+    },
+    {
+      "nome": "Ana Oliveira",
+      "email": "ana@example.com",
+      "cpf": "555.666.777-88",
+      "telefone": "(21) 66666-6666"
+    }
+  ],
+  "administrador": {
+    "nome": "Fernanda Souza",
+    "email": "fernanda@example.com",
+    "cpf": "999.888.777-66",
+    "telefone": "(11) 55555-5555"
+  }
+}
