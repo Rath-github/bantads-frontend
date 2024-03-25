@@ -1,7 +1,8 @@
-<div class="container">
-  <h1>Consulta de Saldo</h1>
+<div class="container max-w-screen-md mx-auto my-8">
+  <h1 class="text-3xl font-bold mb-8">Consulta de Saldo</h1>
+  
   <div class="saldo">
-    <p>Seu saldo atual é: <strong>{{ saldo | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
-    <button (click)="consultarSaldo()">Consultar Saldo</button>
+    <p class="text-center text-lg mb-4">Seu saldo atual é: <strong>{{ saldo | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
+    <button class="bg-blue-600 text-white font-bold rounded-md px-4 py-2 transition duration-300 hover:bg-blue-700" (click)="consultarSaldo()">Consultar Saldo</button>
   </div>
 </div>
