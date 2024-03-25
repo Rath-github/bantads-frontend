@@ -1,0 +1,42 @@
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <div class="card" style="margin-bottom: 8px;">
+                <h3 class="card-header">Consulta Cliente</h3>
+                <div class="card-body">
+                    <div class="card-text">
+                        <div class="row justify-content-center">
+                            <form>
+                                <div class="form-group">
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" [(ngModel)]="cpfConsultado" maxlength="14" required>
+                                </div>
+                                <div style="margin-top: 8px;">
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="consultarCliente()">Consultar</button>&nbsp;
+                                    <a class="btn btn-sm btn-secondary" [routerLink]="['/gerentes']">Voltar</a>&nbsp;
+                                </div>         
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-secondary table-bordered table-striped table-hover" *ngIf="clienteFiltrado">
+        <thead class="table-primary text-center">
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Salário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ clienteFiltrado.nome }}</td>
+                <td>{{ clienteFiltrado.cpf }}</td>
+                <td>{{ clienteFiltrado.salario }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
