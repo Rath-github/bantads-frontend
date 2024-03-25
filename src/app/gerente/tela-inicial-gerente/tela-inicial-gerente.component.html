@@ -1,0 +1,54 @@
+<h2>Gerente - Cadastros Pendentes</h2>
+
+<table class="table table-secondary table-bordered table-striped table-hover">
+    <thead class="table-primary text-center">
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Salário</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pedido of pedidosAutocadastro">
+            <td>{{ pedido.nome }}</td>
+            <td>{{ pedido.cpf }}</td>
+            <td>{{ pedido.salario }}</td>
+            <td class="text-center">
+                <button (click)="Aprovar()" class="btn btn-success btn-sm">Aprovar</button>&nbsp;
+                <button (click)="Recusar()" class="btn btn-danger btn-sm">Recusar</button>&nbsp;
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<div style="margin-bottom: 8px;" class="collapse" id="recusar">
+    <div class="card">
+        <h3 class="card-header">Recusar</h3>
+        <div class="card-body">
+            <p class="card-text">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="inputState" class="form-label">Motivação</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Selecione</option>
+                            <option>Motivo 1</option>
+                            <option>Motivo 2</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="razao" class="form-label">Razão</label>
+                        <input type="text" class="form-control" id="razao" placeholder="Digite aqui...">
+                    </div>
+                </div>
+                <a style="margin-top: 8px;" (click)="Recusar()" class="btn btn-primary">Enviar</a>&nbsp;
+        </div>
+    </div>
+</div>-->
+
+<a [routerLink]="['/gerentes/consultar-cliente']" class="btn btn-primary btn-sm">Consultar Cliente</a>&nbsp;
+<a class="btn btn-primary btn-sm">Consultar Todos</a>&nbsp;
+<a class="btn btn-primary btn-sm">Consultar Melhores</a>&nbsp;
