@@ -9,7 +9,7 @@ interface PedidoAutocadastro {
 interface AprovacaoReprovacao {
   cpf: string;
   aprovado: boolean;
-  motivo?: string;
+  motivo: string;
   dataHora: Date;
 }
 
@@ -21,17 +21,24 @@ interface AprovacaoReprovacao {
 export class GerenteComponent {
   pedidosAutocadastro: PedidoAutocadastro[] = [
     { cpf: '123.456.789-01', nome: 'João da Silva', salario: 5000 },
-    // Adicione outros pedidos de autocadastro conforme necessário
+    
   ];
-
-  aprovacoesReprovacoes: AprovacaoReprovacao[] = [];
-
-  // Métodos para aprovar/reprovar clientes
+  
   aprovarCliente(cpf: string): void {
-    // Lógica para aprovar cliente
+    pedido.aprovado = true;
+    console.log('Cliente ${cliente.cpf} aprovado!'); 
   }
 
   reprovarCliente(cpf: string, motivo: string): void {
-    // Lógica para reprovar cliente
+    pedido.aprovado = false;
+    console.log('Cliente ${cliente.cpf} reprovado!');     
   }
+  
+  document.getElementById('aprovarBtn')!.addEventListener('click', () => {
+    aprovarCliente(pedido);
+});
+
+document.getElementById('rejeitarBtn')!.addEventListener('click', () => {
+    reprovarCliente(pedido);
+});
 }
