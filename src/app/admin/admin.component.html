@@ -1,0 +1,50 @@
+<div>
+    <h2>Tela Inicial do Administrador</h2>
+  
+    <h3>Gestão de Gerentes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let gerente of gerentes">
+          <td>{{ gerente.nome }}</td>
+          <td>{{ gerente.cpf }}</td>
+          <td>{{ gerente.email }}</td>
+          <td>{{ gerente.telefone }}</td>
+          <td>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h3>Relatório de Clientes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do Cliente</th>
+          <th>CPF do Cliente</th>
+          <th>Limite do Cliente</th>
+          <th>Nome do Gerente</th>
+          <th>Saldo do Cliente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes | orderBy: 'nome'">
+          <td>{{ cliente.nome }}</td>
+          <td>{{ cliente.cpf }}</td>
+          <td>{{ cliente.limite | currency }}</td>
+          <td>{{ cliente.gerente }}</td>
+          <td>{{ cliente.saldo | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
