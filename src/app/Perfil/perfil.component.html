@@ -10,13 +10,13 @@
   
     <div>
       <label for="novoSalario">Novo Salário:</label>
-      <input type="number" id="novoSalario" [(ngModel)]="novoSalario" />
+      <input type="number" id="novoSalario" [(ngModel)]="novoSalario" ngxMask="XXXX,XX" />
       <button (click)="salvarAlteracoes(novoSalario)">Salvar Alterações</button>
     </div>
 
     <div>
         <label for="valorDeposito">Valor para Depósito:</label>
-        <input type="number" id="valorDeposito" [(ngModel)]="valorDeposito" />
+        <input type="number" id="valorDeposito" [(ngModel)]="valorDeposito" ngxMask="XXXX,XX" />
         <button (click)="depositar(valorDeposito)">Depositar</button>
     </div>
 
@@ -25,16 +25,16 @@
     <label for="contaDestino">Conta Destino:</label>
     <input type="text" id="contaDestino" [(ngModel)]="contaDestino" />
     <label for="valorTransferencia">Valor:</label>
-    <input type="number" id="valorTransferencia" [(ngModel)]="valorTransferencia" />
+    <input type="number" id="valorTransferencia" [(ngModel)]="valorTransferencia" ngxMask="XXXX,XX" />
     <button (click)="transferir(contaDestino, valorTransferencia)">Transferir</button>
   </div>
 
   <div>
     <h3>Consulta de Extrato</h3>
     <label for="dataInicio">Data Início:</label>
-    <input type="date" id="dataInicio" [(ngModel)]="dataInicio" />
+    <input type="date" id="dataInicio" [(ngModel)]="dataInicio" ngxMask="DD/MM/AAAA"/>
     <label for="dataFim">Data Fim:</label>
-    <input type="date" id="dataFim" [(ngModel)]="dataFim" />
+    <input type="date" id="dataFim" [(ngModel)]="dataFim" ngxMask="DD/MM/AAAA" />
     <button (click)="consultarExtrato(dataInicio, dataFim)">Consultar Extrato</button>
   </div>
 
