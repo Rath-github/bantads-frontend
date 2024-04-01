@@ -3,4 +3,5 @@ export class Gerente {
     cpf : string = '';
     email : string = '';
     telefone : number = 0;
+    clientes: any [""];
 }

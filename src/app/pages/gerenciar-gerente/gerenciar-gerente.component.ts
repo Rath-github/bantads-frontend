@@ -15,12 +15,14 @@ export class GerenciarGerenteComponent {
       cpf : '111.222.333-44' ,
       email : 'maria@gmail.com',
       telefone : 7812345678,
+      clientes : ["11112","12345"]
     },
     {
       nome : 'igor',
       cpf : '222.323.333-67' ,
       email : 'igor@gmail.com',
       telefone : 1671676789,
+      clientes : ["22112","33345"]
     }
   ];
 
@@ -29,6 +31,7 @@ export class GerenciarGerenteComponent {
     cpf  : '',
     email : '',
     telefone : 0,
+    clientes : "",
 };
 
 gerenteSelecionado = {
@@ -36,6 +39,7 @@ gerenteSelecionado = {
   cpf  : '',
   email : '',
   telefone : 0,
+  clientes : "",
 };
 
 mostrarNovo : boolean = false;

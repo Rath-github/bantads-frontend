@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { AutocadastroComponent } from './pages/autocadastro/autocadastro.component';
 import { GerenciarGerenteComponent } from './pages/gerenciar-gerente/gerenciar-gerente.component';
 import { RelatorioClientesComponent } from './pages/relatorio-clientes/relatorio-clientes.component';
+import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AutocadastroComponent,
     GerenciarGerenteComponent,
-    RelatorioClientesComponent
+    RelatorioClientesComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
