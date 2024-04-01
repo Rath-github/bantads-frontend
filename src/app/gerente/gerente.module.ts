@@ -6,6 +6,7 @@ import { ConsultarClienteTodosComponent } from './consultar-cliente-todos/consul
 import { ConsultarClienteMelhoresComponent } from './consultar-cliente-melhores/consultar-cliente-melhores.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgxMaskDirective, NgxMaskPipe  } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { FormsModule } from '@angular/forms';
     ConsultarClienteMelhoresComponent
   ],
   imports: [
-    CommonModule, RouterModule, FormsModule
+    CommonModule, RouterModule, FormsModule, NgxMaskDirective, NgxMaskPipe
   ]
 })
 export class GerenteModule { }

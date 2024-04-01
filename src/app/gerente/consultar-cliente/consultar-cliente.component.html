@@ -8,7 +8,7 @@
                         <form>
                             <div class="mb-4">
                                 <label for="cpf" class="block text-sm font-bold mb-2">CPF</label>
-                                <input type="text" class="form-input w-full border border-gray-300 rounded py-2 px-4" id="cpf" name="cpf" placeholder="000.000.000-00" [(ngModel)]="cpfConsultado" maxlength="14" required>
+                                <input type="text" class="form-input w-full border border-gray-300 rounded py-2 px-4" id="cpf" name="cpf" mask="000.000.000-00" placeholder="000.000.000-00" [(ngModel)]="cpfConsultado" maxlength="14" required>
                             </div>
                             <div>
                                 <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" type="button" (click)="consultarCliente()">Consultar</button>
@@ -32,7 +32,7 @@
         <tbody>
             <tr>
                 <td class="border px-4 py-2">{{ clienteFiltrado.nome }}</td>
-                <td class="border px-4 py-2">{{ clienteFiltrado.cpf }}</td>
+                <td class="border px-4 py-2">{{ formatarCPF(clienteFiltrado.cpf) }}</td>
                 <td class="border px-4 py-2">{{ clienteFiltrado.salario }}</td>
             </tr>
         </tbody>

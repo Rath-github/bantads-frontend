@@ -13,12 +13,17 @@ interface DadosCliente {
 })
 export class ConsultarClienteComponent {
   clienteGerente: DadosCliente[] = [
-    { cpf: '111.111.111-00', nome: 'Lucas Dias', salario: 10000 },
-    { cpf: '222.222.222-00', nome: 'Allan Neves', salario: 8000 },
-    { cpf: '333.333.333-00', nome: 'Henrique Prokopenko', salario: 6000 },
-    { cpf: '444.444.444-00', nome: 'Marcos Moreira', salario: 2000 },
-    { cpf: '555.555.555-00', nome: 'Caique', salario: 500 },
+    { cpf: '11111111111', nome: 'Lucas Dias', salario: 10000 },
+    { cpf: '22222222222', nome: 'Allan Neves', salario: 8000 },
+    { cpf: '33333333333', nome: 'Henrique Prokopenko', salario: 6000 },
+    { cpf: '44444444444', nome: 'Marcos Moreira', salario: 2000 },
+    { cpf: '55555555555', nome: 'Caique', salario: 500 },
   ];
+
+  formatarCPF(cpf: string): string {
+    return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+}
+
 
   cpfConsultado: string = '';
   clienteFiltrado: DadosCliente | undefined;
