@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Gerente } from 'src/app/models/gerente.model';
+import { Cliente } from 'src/app/models/cliente.model';
 
 @Component({
   selector: 'app-home-admin',
@@ -23,4 +24,25 @@ export class HomeAdminComponent {
       clientes : ["22112","33345"]
     }
   ];
+  clientes: Cliente [] = [
+    {
+      nome: "João Silva",
+      email: "joao@example.com",
+      cpf: "123.456.789-10",
+      endereco: {
+        tipo: "Rua",
+        logradouro: "Rua das Flores",
+        numero: "123",
+        complemento: "Apto 101",
+        cep: "12345-678",
+        cidade: "São Paulo",
+        estado: "SP"
+      },
+      gerente : "Ana Oliveira",
+      telefone: "(11) 99999-9999",
+      salario: 2000.00,
+      limite : 1000.00,
+      saldo : 4000.00
+    }
+  ]
 }
