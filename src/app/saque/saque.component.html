@@ -4,49 +4,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-200">
 
- 
-  <nav class="bg-blue-500 p-4 flex justify-end">
-    <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100">
-      Página Inicial
-    </button>
-    <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100">
-      Saque
-    </button>
-    <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100">
-      Depósito
-    </button>
-    <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100">
-      Login
-    </button>
-  </nav>
+<nav class="bg-blue-500 p-4 flex justify-end">
+  <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100" type="button">
+    Página Inicial
+  </button>
+  <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100" type="button">
+    Saque
+  </button>
+  <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100" type="button">
+    Depósito
+  </button>
+  <button class="mx-2 px-4 py-2 bg-white text-blue-500 rounded hover:bg-blue-100" type="button">
+    Login
+  </button>
+</nav>
 
- 
-  <div class="container mx-auto mt-8 px-4">
-    <h1 class="text-3xl font-bold mb-4">Bem-vindo ao Internet Banking</h1>
-    <p>Seja bem-vindo ao nosso sistema bancário. Aqui você pode simular diversas operações:</p>
-    <div class="mt-4">
-      <h2 class="text-xl font-semibold mb-2">Simulação de Operações:</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-white p-4 rounded shadow-md">
-          <h3 class="text-lg font-semibold mb-2">Saque</h3>
-          
-          <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Simular Saque</button>
+<div class="container mx-auto mt-8 px-4">
+  <h1 class="text-3xl font-bold mb-4">Bem-vindo ao Internet Banking</h1>
+  <p>Seja bem-vindo ao nosso sistema bancário. Aqui você pode simular diversas operações:</p>
+  <div class="mt-4">
+    <h2 class="text-xl font-semibold mb-2">Simulação de Operações:</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded shadow-md">
+        <h3 class="text-lg font-semibold mb-2">Saque</h3>
+        <div class="flex items-center mb-4">
+          <label for="valorSaque" class="mr-2">Valor:</label>
+          <input type="number" id="valorSaque" class="px-2 py-1 border rounded">
         </div>
-        <div class="bg-white p-4 rounded shadow-md">
-          <h3 class="text-lg font-semibold mb-2">Depósito</h3>
-          
-          <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Simular Depósito</button>
-        </div>
-        
+        <button id="simular-saque" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" type="button">Simular Saque</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow-md">
+        <h3 class="text-lg font-semibold mb-2">Depósito</h3>
+        <button class="mt-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600" type="button">Simular Depósito</button>
       </div>
     </div>
   </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btnSimularSaque = document.getElementById('simular-saque');
+    btnSimularSaque.addEventListener('click', function() {
+      const valorSaque = document.getElementById('valorSaque').value;
+      if (valorSaque.trim() === '') {
+        alert('Por favor, informe o valor a ser sacado.');
+      } else {
+        const mensagem = 'Você sacou R$ ' + valorSaque + '.';
+        alert(mensagem);
+      }
+    });
+  });
+</script>
 
 </body>
 

@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SaqueComponent } from './saque/saque.component';
 import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [{ path: 'saque', component: SaqueComponent },
-{ path: '', redirectTo: '/login', pathMatch: 'full' },
-{ path: "login", component: LoginComponent}, ];
+{ path: "login", component: LoginComponent}, { path: '', redirectTo: '/saque', pathMatch: 'full' }, // Redireciona para /saque por padrão
+{ path: '**', redirectTo: '/saque' } ];
 
 
 @NgModule({

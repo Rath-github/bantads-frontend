@@ -15,7 +15,13 @@
       },
       "telefone": "(11) 99999-9999",
       "salario": 2000,
-      "id": "123e"
+      "id": "123e",
+      "conta": {
+        "banco": "Banco ABC",
+        "agencia": "1234",
+        "numeroConta": "56789",
+        "saldo": 1500.00
+      }
     },
     {
       "nome": "Maria Oliveira",
@@ -32,7 +38,13 @@
       },
       "telefone": "(21) 88888-8888",
       "salario": 3000,
-      "id": "effc"
+      "id": "effc",
+      "conta": {
+        "banco": "Banco XYZ",
+        "agencia": "5678",
+        "numeroConta": "12345",
+        "saldo": 2500.00
+      }
     },
     {
       "id": "31c5"
@@ -45,7 +57,13 @@
       "nome": "Thiago Dos Santos",
       "email": "thiagodossantos315@gmail.com",
       "cpf": "109.538.619-02",
-      "salario": 20000
+      "salario": 20000,
+      "conta": {
+        "banco": "Banco QRS",
+        "agencia": "9876",
+        "numeroConta": "54321",
+        "saldo": 10000.00
+      }
     }
   ],
   "gerentes": [
