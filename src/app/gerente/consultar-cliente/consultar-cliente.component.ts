@@ -23,7 +23,10 @@ export class ConsultarClienteComponent {
   cpfConsultado: string = '';
   clienteFiltrado: DadosCliente | undefined;
 
+  constructor() { }
+
   consultarCliente() {
+    // Encontra o cliente pelo CPF consultado se n mostra a msg "Cliente não encontrado"
     this.clienteFiltrado = this.clienteGerente.find(cliente => cliente.cpf === this.cpfConsultado);
   }
 }

@@ -23,10 +23,16 @@ export class TelaInicialGerenteComponent {
 
   Aprovar() {
     alert("Cadastro aprovado!");
-    //Adicionar lógica de aprovação
+    //Adicionar lógica de Aprovação
   }
   Recusar() {
     alert("Cadastro recusado!");
-    //Adicionar lógica de aprovação
+    //Adicionar lógica de Reprovação
+  }
+
+  mostrarRecusarCard: boolean = false;
+
+  toggleRecusarCard() {
+    this.mostrarRecusarCard = !this.mostrarRecusarCard;
   }
 }

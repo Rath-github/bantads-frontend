@@ -1,42 +1,44 @@
-<div class="container text-center">
-    <div class="row justify-content-center">
-        <div class="col-7">
-            <div class="card" style="margin-bottom: 8px;">
-                <h3 class="card-header">Consulta Cliente</h3>
-                <div class="card-body">
-                    <div class="card-text">
-                        <div class="row justify-content-center">
-                            <form>
-                                <div class="form-group">
-                                    <label for="cpf">CPF</label>
-                                    <input type="text" class="form-control" id="cpf" [(ngModel)]="cpfConsultado" maxlength="14" required>
-                                </div>
-                                <div style="margin-top: 8px;">
-                                    <button class="btn btn-primary btn-sm" type="button" (click)="consultarCliente()">Consultar</button>&nbsp;
-                                    <a class="btn btn-sm btn-secondary" [routerLink]="['/gerentes']">Voltar</a>&nbsp;
-                                </div>         
-                            </form>
-                        </div>
+<div class="container mx-auto text-center">
+    <div class="flex justify-center">
+        <div class="w-3/4">
+            <div class="bg-white border border-gray-300 rounded-lg shadow-lg mb-8">
+                <h3 class="bg-gray-200 text-lg font-bold px-4 py-2">Consulta Cliente</h3>
+                <div class="p-4">
+                    <div class="flex justify-center">
+                        <form>
+                            <div class="mb-4">
+                                <label for="cpf" class="block text-sm font-bold mb-2">CPF</label>
+                                <input type="text" class="form-input w-full border border-gray-300 rounded py-2 px-4" id="cpf" name="cpf" placeholder="000.000.000-00" [(ngModel)]="cpfConsultado" maxlength="14" required>
+                            </div>
+                            <div>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" type="button" (click)="consultarCliente()">Consultar</button>
+                                <a class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded" [routerLink]="['/gerente']">Voltar</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <table class="table table-secondary table-bordered table-striped table-hover" *ngIf="clienteFiltrado">
-        <thead class="table-primary text-center">
+    <table class="table-auto bg-secondary border border-gray-400 rounded-lg shadow-lg mx-auto" *ngIf="clienteFiltrado">
+        <thead class="bg-primary text-white">
             <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Salário</th>
+                <th class="px-4 py-2">Nome</th>
+                <th class="px-4 py-2">CPF</th>
+                <th class="px-4 py-2">Salário</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{ clienteFiltrado.nome }}</td>
-                <td>{{ clienteFiltrado.cpf }}</td>
-                <td>{{ clienteFiltrado.salario }}</td>
+                <td class="border px-4 py-2">{{ clienteFiltrado.nome }}</td>
+                <td class="border px-4 py-2">{{ clienteFiltrado.cpf }}</td>
+                <td class="border px-4 py-2">{{ clienteFiltrado.salario }}</td>
             </tr>
         </tbody>
     </table>
+    
+    <div class="text-center" *ngIf="!clienteFiltrado && cpfConsultado">
+        <p>Cliente não encontrado.</p>
+    </div>
 </div>

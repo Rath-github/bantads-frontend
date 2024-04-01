@@ -4,9 +4,9 @@ import { TelaInicialGerenteComponent } from './gerente/tela-inicial-gerente/tela
 import { ConsultarClienteComponent } from './gerente/consultar-cliente/consultar-cliente.component';
 
 const routes: Routes = [
-  { path: 'gerentes', redirectTo: 'gerentes/tela-inicial-gerente'},
-  { path: 'gerentes/tela-inicial-gerente', component: TelaInicialGerenteComponent },
-  { path: 'gerentes/consultar-cliente', component: ConsultarClienteComponent }
+  { path: 'gerente', redirectTo: 'gerente/tela-inicial-gerente'},
+  { path: 'gerente/tela-inicial-gerente', component: TelaInicialGerenteComponent },
+  { path: 'gerente/consultar-cliente', component: ConsultarClienteComponent }
 ];
 
 @NgModule({
