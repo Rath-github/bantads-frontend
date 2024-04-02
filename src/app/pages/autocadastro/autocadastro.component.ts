@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-autocadastro',
-  standalone: true,
-  imports: [NgxMaskDirective, NgxMaskPipe, FormsModule],
   templateUrl: './autocadastro.component.html',
   styleUrls: ['./autocadastro.component.css']
 })
