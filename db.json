@@ -13,11 +13,12 @@
         "cidade": "São Paulo",
         "estado": "SP"
       },
-      "gerente" : "Ana Oliveira",
+      "gerente": "Ana Oliveira",
       "telefone": "(11) 99999-9999",
-      "salario": 2000.00,
-      "limite" : 1000.00,
-      "saldo" : 4000.00
+      "salario": 2000,
+      "limite": 1000,
+      "saldo": 4000,
+      "id": "9cdf"
     },
     {
       "nome": "Maria Oliveira",
@@ -32,11 +33,32 @@
         "cidade": "Rio de Janeiro",
         "estado": "RJ"
       },
-      "gerente" : "Ana Oliveira",
+      "gerente": "Ana Oliveira",
       "telefone": "(21) 88888-8888",
-      "salario": 3000.00,
-      "limite" : 1500.00,
-      "saldo" : 4000.00
+      "salario": 3000,
+      "limite": 1500,
+      "saldo": 4000,
+      "id": "0b15"
+    },
+    {
+      "id": "23ea",
+      "nome": "igorn lobato",
+      "email": "kakakak@hotmail.com",
+      "cpf": "333333333",
+      "endereco": {
+        "tipo": "",
+        "logradouro": "",
+        "numero": "",
+        "complemento": "",
+        "cep": "",
+        "cidade": "",
+        "estado": ""
+      },
+      "gerente": "",
+      "telefone": "43234566",
+      "salario": "03000",
+      "limite": 0,
+      "saldo": 0
     }
   ],
   "gerentes": [
@@ -44,13 +66,15 @@
       "nome": "Carlos Santos",
       "email": "carlos@example.com",
       "cpf": "111.222.333-44",
-      "telefone": "(11) 77777-7777"
+      "telefone": "(11) 77777-7777",
+      "id": "1527"
     },
     {
       "nome": "Ana Oliveira",
       "email": "ana@example.com",
       "cpf": "555.666.777-88",
-      "telefone": "(21) 66666-6666"
+      "telefone": "(21) 66666-6666",
+      "id": "633d"
     }
   ],
   "administrador": {
