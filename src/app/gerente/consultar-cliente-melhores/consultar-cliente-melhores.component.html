@@ -1,0 +1,29 @@
+<div class="p-8">
+    <h2 class="text-2xl font-bold mb-4">Gerente - Consulta Melhores Clientes</h2>     
+
+    <table style="margin-bottom: 8px;" class="table-auto w-full bg-secondary border border-gray-400 rounded-lg shadow-lg">
+        <thead class="bg-primary text-center text-white">
+            <tr>
+                <th class="px-4 py-2">Nome</th>
+                <th class="px-4 py-2">CPF</th>
+                <th class="px-4 py-2">Cidade</th>
+                <th class="px-4 py-2">Estado</th>
+                <th class="px-4 py-2">Saldo da Conta</th>
+                <th class="px-4 py-2">Detalhes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes.slice(0, 3)" class="text-center">
+              <td class="border px-4 py-2 font-bold">{{ cliente.nome }}</td>
+              <td class="border px-4 py-2 font-bold">{{ formatarCPF(cliente.cpf) }}</td>
+              <td class="border px-4 py-2 font-bold">{{ cliente.cidade }}</td>
+              <td class="border px-4 py-2 font-bold">{{ cliente.estado }}</td>
+              <td class="border px-4 py-2 font-bold">{{ cliente.saldoConta }}</td>
+              <td class="border px-4 py-2 font-bold"><a [routerLink]="['/cliente', cliente.cpf]">Detalhes</a></td>
+            </tr>
+          </tbody>
+                
+    </table>
+
+    <a class="btn btn-sm btn-secondary" [routerLink]="['/gerente']">Voltar</a>&nbsp;
+</div>
