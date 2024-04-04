@@ -6,6 +6,7 @@ import { AutocadastroComponent } from './pages/autocadastro/autocadastro.compone
 import { ClienteHomeComponent } from './pages/cliente-home/cliente-home.component';
 import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.component';
 import { DepositoComponent } from './pages/deposito/deposito.component'
+import { SaqueComponent } from './pages/saque/saque.component';
 
 export const routes: Routes = [
   { path: "login", component: LoginComponent},
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: "autocadastro", component: AutocadastroComponent },
   { path: "alterarPerfil", component: PerfilClienteComponent},
   { path: "deposito", component: DepositoComponent},
+  { path: 'saque', component: SaqueComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

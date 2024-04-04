@@ -1,0 +1,10 @@
+<div>
+  <h2>Saque</h2>
+  <form (submit)="sacar()">
+    <label for="numeroConta">Número da Conta:</label>
+    <input type="text" id="numeroConta" [(ngModel)]="numeroConta" name="numeroConta">
+    <label for="valorSaque">Valor do Saque:</label>
+    <input type="number" id="valorSaque" [(ngModel)]="valorSaque" name="valorSaque">
+    <button type="submit">Sacar</button>
+  </form>
+</div>

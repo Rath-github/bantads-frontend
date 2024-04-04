@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
+import { SaqueComponent } from './pages/saque/saque.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DepositoComponent } from './pages/deposito/deposito.component';
     FooterComponent,
     PerfilClienteComponent,
     DepositoComponent,
+    SaqueComponent,
   ],
   imports: [
     BrowserModule,
