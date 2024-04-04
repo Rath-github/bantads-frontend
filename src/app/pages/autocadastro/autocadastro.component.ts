@@ -26,7 +26,7 @@ export class AutocadastroComponent {
     };
 
     this.clienteService.cadastrarCliente(novoCliente)
-      .subscribe(response => {
+      .subscribe((response: any) => {
         console.log('Cliente cadastrado com sucesso:', response);
         // Aqui você pode adicionar lógica para lidar com a resposta do servidor, como redirecionar para outra página, exibir uma mensagem de sucesso, etc.
       }, error => {

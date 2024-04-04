@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../service/login/login.service';
 import { LoginSchema } from '../../schema/login.schema';
-import { z } from 'zod';
+import { z, ZodError } from 'zod';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +9,8 @@ import { z } from 'zod';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username?: string;
-  password?: string;
+  username!: string;
+  password!: string;
 
   constructor(private loginService: LoginService) { }
 
@@ -30,9 +30,12 @@ export class LoginComponent {
         // Aqui você pode adicionar lógica para lidar com falhas de login
       });
     } catch (error) {
-      if (z.instanceof(z.ZodError).check(error)) {
+      if (error instanceof ZodError) {
         console.error('Validation error:', error.errors);
         // Aqui você pode adicionar lógica para lidar com erros de validação
+      } else {
+        console.error('Outro erro:', error);
+        // Aqui você pode adicionar lógica para lidar com outros tipos de erro
       }
     }
   }
