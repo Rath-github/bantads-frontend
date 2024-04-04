@@ -8,7 +8,8 @@ import { ClienteHomeComponent } from './pages/cliente-home/cliente-home.componen
 import { AutocadastroComponent } from './pages/autocadastro/autocadastro.component';
 import { FormsModule } from '@angular/forms'; 
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { HeaderComponent } from './components/header/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './components/header/header/header.component';
     LoginComponent,
     ClienteHomeComponent,
     AutocadastroComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
