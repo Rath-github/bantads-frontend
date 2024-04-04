@@ -14,6 +14,7 @@ import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.co
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TransferenciaComponent } from './pages/transferencia/transferencia.comp
     DepositoComponent,
     SaqueComponent,
     TransferenciaComponent,
+    ConsultaExtratoComponent,
   ],
   imports: [
     BrowserModule,

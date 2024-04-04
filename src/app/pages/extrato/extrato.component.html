@@ -1,0 +1,31 @@
+<div>
+  <h2>Consulta de Extrato</h2>
+  <form (submit)="consultarExtrato()">
+    <label for="dataInicio">Data de Início:</label>
+    <input type="date" id="dataInicio" [(ngModel)]="dataInicio" name="dataInicio">
+    <label for="dataFim">Data de Fim:</label>
+    <input type="date" id="dataFim" [(ngModel)]="dataFim" name="dataFim">
+    <button type="submit">Consultar</button>
+  </form>
+
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th>Data/Hora</th>
+        <th>Operação</th>
+        <th>Cliente Origem/Destino</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transacao of extrato">
+        <td>{{ transacao.dataHora }}</td>
+        <td [ngClass]="{ 'text-red-500': transacao.operacao === 'saque' || transacao.operacao === 'transferencia_saida',
+                        'text-blue-500': transacao.operacao === 'deposito' || transacao.operacao === 'transferencia_entrada' }">
+          {{ transacao.operacao }}</td>
+        <td>{{ transacao.cliente }}</td>
+        <td>{{ transacao.valor }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
