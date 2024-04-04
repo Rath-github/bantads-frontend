@@ -1,19 +1,25 @@
-<div *ngIf="perfil">
-  <h1>Perfil do Cliente</h1>
-  <p>Nome: {{ perfil.nome }}</p>
-  <p>E-mail: {{ perfil.email }}</p>
-  <p>Salário: {{ perfil.salario }}</p>
-  <p>Saldo: {{ perfil.saldo }}</p>
-  <p>Gerente: {{ perfil.gerente }}</p>
+<div *ngIf="perfil" class="max-w-md mx-auto mt-8">
+  <h1 class="text-2xl font-bold mb-4">Perfil do Cliente</h1>
+  <p class="mb-2"><span class="font-semibold">Nome:</span> {{ perfil.nome }}</p>
+  <p class="mb-2"><span class="font-semibold">E-mail:</span> {{ perfil.email }}</p>
+  <p class="mb-2"><span class="font-semibold">Salário:</span> {{ perfil.salario }}</p>
+  <p class="mb-2"><span class="font-semibold">Saldo:</span> {{ perfil.saldo }}</p>
+  <p class="mb-2"><span class="font-semibold">Gerente:</span> {{ perfil.gerente }}</p>
 
-  <h2>Alterar Perfil</h2>
-  <form (submit)="alterarPerfil()">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" [(ngModel)]="novoNome" name="nome">
-    <label for="email">E-mail:</label>
-    <input type="text" id="email" [(ngModel)]="novoEmail" name="email">
-    <label for="salario">Salário:</label>
-    <input type="number" id="salario" [(ngModel)]="novoSalario" name="salario">
-    <button type="submit">Salvar Alterações</button>
+  <h2 class="text-xl font-bold mt-8 mb-4">Alterar Perfil</h2>
+  <form (submit)="alterarPerfil()" class="space-y-4">
+    <div>
+      <label for="nome" class="block mb-1">Nome:</label>
+      <input type="text" id="nome" [(ngModel)]="novoNome" name="nome" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+    </div>
+    <div>
+      <label for="email" class="block mb-1">E-mail:</label>
+      <input type="text" id="email" [(ngModel)]="novoEmail" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+    </div>
+    <div>
+      <label for="salario" class="block mb-1">Salário:</label>
+      <input type="number" id="salario" [(ngModel)]="novoSalario" name="salario" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400">
+    </div>
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Salvar Alterações</button>
   </form>
 </div>
