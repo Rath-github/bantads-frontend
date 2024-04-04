@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ClienteHomeComponent,
     AutocadastroComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilClienteComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ export class AutocadastroComponent {
       .subscribe((response: any) => {
         console.log('Cliente cadastrado com sucesso:', response);
         // Aqui você pode adicionar lógica para lidar com a resposta do servidor, como redirecionar para outra página, exibir uma mensagem de sucesso, etc.
-      }, error => {
+      }, (error: any) => {
         console.error('Erro ao cadastrar cliente:', error);
         // Aqui você pode adicionar lógica para lidar com erros, como exibir uma mensagem de erro para o usuário.
       });

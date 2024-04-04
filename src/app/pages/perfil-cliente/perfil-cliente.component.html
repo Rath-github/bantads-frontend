@@ -1,0 +1,19 @@
+<div *ngIf="perfil">
+  <h1>Perfil do Cliente</h1>
+  <p>Nome: {{ perfil.nome }}</p>
+  <p>E-mail: {{ perfil.email }}</p>
+  <p>Salário: {{ perfil.salario }}</p>
+  <p>Saldo: {{ perfil.saldo }}</p>
+  <p>Gerente: {{ perfil.gerente }}</p>
+
+  <h2>Alterar Perfil</h2>
+  <form (submit)="alterarPerfil()">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" [(ngModel)]="novoNome" name="nome">
+    <label for="email">E-mail:</label>
+    <input type="text" id="email" [(ngModel)]="novoEmail" name="email">
+    <label for="salario">Salário:</label>
+    <input type="number" id="salario" [(ngModel)]="novoSalario" name="salario">
+    <button type="submit">Salvar Alterações</button>
+  </form>
+</div>
