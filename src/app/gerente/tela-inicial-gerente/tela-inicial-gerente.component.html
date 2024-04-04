@@ -12,9 +12,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let pedido of pedidosAutocadastro" class="text-center">
-                <td class="border px-4 py-2">{{ pedido.nome }}</td>
-                <td class="border px-4 py-2">{{ pedido.cpf }}</td>
-                <td class="border px-4 py-2">{{ pedido.salario }}</td>
+                <td class="border px-4 py-2 font-bold">{{ pedido.nome }}</td>
+                <td class="border px-4 py-2 font-bold">{{ pedido.cpf }}</td>
+                <td class="border px-4 py-2 font-bold">{{ pedido.salario }}</td>
                 <td class="border px-4 py-2">
                     <button (click)="Aprovar()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Aprovar</button>&nbsp;
                     <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" (click)="toggleRecusarCard()">Recusar</button>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <a href="/gerente/consultar-cliente" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Cliente</a>&nbsp;
-    <a href="/gerente/consiltar-cliente-todos" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Todos</a>&nbsp;
-    <a href="/gerente/consiltar-cliente-melhores" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Melhores</a>
+    <button routerLink="/gerente/consultar-cliente" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Cliente</button>&nbsp;
+    <button routerLink="/gerente/consultar-cliente-todos" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Todos</button>&nbsp;
+    <button routerLink="/gerente/consultar-cliente-melhores" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Melhores</button>
 </div>
