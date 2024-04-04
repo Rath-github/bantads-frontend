@@ -7,6 +7,8 @@ import { ClienteHomeComponent } from './pages/cliente-home/cliente-home.componen
 import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.component';
 import { DepositoComponent } from './pages/deposito/deposito.component'
 import { SaqueComponent } from './pages/saque/saque.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+
 
 export const routes: Routes = [
   { path: "login", component: LoginComponent},
@@ -15,6 +17,7 @@ export const routes: Routes = [
   { path: "alterarPerfil", component: PerfilClienteComponent},
   { path: "deposito", component: DepositoComponent},
   { path: 'saque', component: SaqueComponent },
+  { path: 'transferencia', component: TransferenciaComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

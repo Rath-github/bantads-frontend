@@ -1,0 +1,12 @@
+<div>
+  <h2>Transferência</h2>
+  <form (submit)="transferir()">
+    <label for="numeroContaOrigem">Número da Conta de Origem:</label>
+    <input type="text" id="numeroContaOrigem" [(ngModel)]="numeroContaOrigem" name="numeroContaOrigem">
+    <label for="numeroContaDestino">Número da Conta de Destino:</label>
+    <input type="text" id="numeroContaDestino" [(ngModel)]="numeroContaDestino" name="numeroContaDestino">
+    <label for="valorTransferencia">Valor da Transferência:</label>
+    <input type="number" id="valorTransferencia" [(ngModel)]="valorTransferencia" name="valorTransferencia">
+    <button type="submit">Transferir</button>
+  </form>
+</div>
