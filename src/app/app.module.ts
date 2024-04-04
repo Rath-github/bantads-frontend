@@ -11,6 +11,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.component';
+import { DepositoComponent } from './pages/deposito/deposito.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PerfilClienteComponent } from './pages/perfil-cliente/perfil-cliente.co
     HeaderComponent,
     FooterComponent,
     PerfilClienteComponent,
+    DepositoComponent,
   ],
   imports: [
     BrowserModule,

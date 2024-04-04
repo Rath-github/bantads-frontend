@@ -24,4 +24,9 @@ export class ClienteService {
   alterarPerfil(dados: any): Observable<any> {
     return this.http.put(`${this.apiUrl}perfil`, dados);
   }
+
+  depositar(numeroConta: string, valor: number): Observable<any> {
+    const dadosDeposito = { numeroConta, valor };
+    return this.http.post(`${this.apiUrl}/deposito`, dadosDeposito);
+  }
 }
