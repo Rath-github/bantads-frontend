@@ -1,0 +1,29 @@
+{
+    "clientes": [
+      {
+        "nome": "João da Silva",
+        "cpf": "123.456.789-01",
+        "saldo": 50000
+      },
+      {
+        "nome": "Maria Souza",
+        "cpf": "987.654.321-00",
+        "saldo": 30000
+      }
+    ],
+    "gerentes": [
+      {
+        "nome": "Fernando Oliveira",
+        "cpf": "111.222.333-44",
+        "email": "fernando@example.com",
+        "telefone": "(41) 1234-5678"
+      },
+      {
+        "nome": "Ana Santos",
+        "cpf": "555.666.777-88",
+        "email": "ana@example.com",
+        "telefone": "(41) 9876-5432"
+      }
+    ]
+  }
+  
