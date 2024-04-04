@@ -1,10 +1,14 @@
-<div>
-  <h2>Depósito</h2>
-  <form (submit)="depositar()">
-    <label for="numeroConta">Número da Conta:</label>
-    <input type="text" id="numeroConta" [(ngModel)]="numeroConta" name="numeroConta">
-    <label for="valorDeposito">Valor do Depósito:</label>
-    <input type="number" id="valorDeposito" [(ngModel)]="valorDeposito" name="valorDeposito">
-    <button type="submit">Depositar</button>
+<div class="max-w-md mx-auto mt-8">
+  <h2 class="text-2xl font-bold mb-4">Depósito</h2>
+  <form class="space-y-4" (submit)="depositar()">
+    <div>
+      <label for="numeroConta" class="block mb-1">Número da Conta:</label>
+      <input type="text" id="numeroConta" [(ngModel)]="numeroConta" name="numeroConta" class="w-full border border-gray-300 rounded px-3 py-2">
+    </div>
+    <div>
+      <label for="valorDeposito" class="block mb-1">Valor do Depósito:</label>
+      <input type="number" id="valorDeposito" [(ngModel)]="valorDeposito" name="valorDeposito" class="w-full border border-gray-300 rounded px-3 py-2">
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Depositar</button>
   </form>
 </div>
