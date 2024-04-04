@@ -8,13 +8,15 @@ import { ClienteHomeComponent } from './pages/cliente-home/cliente-home.componen
 import { AutocadastroComponent } from './pages/autocadastro/autocadastro.component';
 import { FormsModule } from '@angular/forms'; 
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { HeaderComponent } from './components/header/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ClienteHomeComponent,
-    AutocadastroComponent
+    AutocadastroComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
