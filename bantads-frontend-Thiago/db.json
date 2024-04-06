@@ -20,7 +20,7 @@
         "banco": "Banco ABC",
         "agencia": "1234",
         "numeroConta": "56789",
-        "saldo": 1500.00
+        "saldo": 1500
       }
     },
     {
@@ -43,7 +43,7 @@
         "banco": "Banco XYZ",
         "agencia": "5678",
         "numeroConta": "12345",
-        "saldo": 2500.00
+        "saldo": 2500
       }
     },
     {
@@ -62,8 +62,11 @@
         "banco": "Banco QRS",
         "agencia": "9876",
         "numeroConta": "54321",
-        "saldo": 10000.00
+        "saldo": 10000
       }
+    },
+    {
+      "id": "62ee"
     }
   ],
   "gerentes": [

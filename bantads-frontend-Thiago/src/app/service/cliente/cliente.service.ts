@@ -12,9 +12,9 @@ export class ClienteService {
 
   // Método para cadastrar um novo cliente
   cadastrarCliente(novoCliente: any): Observable<any> {
-    return this.http.post(this.apiUrl, novoCliente);
+    return this.http.post(`${this.apiUrl}clientes`, novoCliente);
   }
-
+  
   // Método para obter o perfil do cliente
   getPerfil(): Observable<any> {
     return this.http.get(`${this.apiUrl}clientes`);
