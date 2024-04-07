@@ -12,7 +12,7 @@ import { Cliente } from 'src/app/models/cliente.model';
 
 export class RelatorioClientesComponent {
   clientes: Cliente[] = [];
-  logo: string = "/assets/Logo.png";
+  logo: string = "/assets/logobantads.png";
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +25,7 @@ export class RelatorioClientesComponent {
   gerarRelatorio(){
     const doc = new jsPDF();
 
-    doc.addImage(this.logo, 'PNG', 30, 10, 40, 40);
+    doc.addImage(this.logo, 'PNG', 30, 5, 40, 40);
 
     doc.setFont('Georgia');
     doc.setFontSize(26);
