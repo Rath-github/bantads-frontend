@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ClienteService } from '../../service/cliente/cliente.service';
-import { cpf } from 'cpf-cnpj-validator';
+import { z } from 'zod';
+import { ClienteSchema } from '../../schema/cliente.schema'; // Substitua o caminho correto do arquivo
+import { NgxMaskDirective, NgxMaskPipe  } from 'ngx-mask';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-autocadastro',
@@ -15,31 +18,27 @@ export class AutocadastroComponent {
 
   constructor(private clienteService: ClienteService) { }
 
-  validarCPF(): boolean {
-    return cpf.isValid(this.cpf);
-  }
-
   cadastrar(): void {
-    if (!this.validarCPF()) {
-      console.error('CPF inválido');
+    try {
     
-      return;
-    }
-
-    const novoCliente = {
-      nome: this.nome,
-      email: this.email,
-      cpf: this.cpf,
-      salario: this.salario
-    };
-
-    this.clienteService.cadastrarCliente(novoCliente)
-      .subscribe((response: any) => {
-        console.log('Cliente cadastrado com sucesso:', response);
-       
-      }, (error: any) => {
-        console.error('Erro ao cadastrar cliente:', error);
-       
+      const clienteValidado = ClienteSchema.parse({
+        nome: this.nome,
+        email: this.email,
+        cpf: this.cpf,
+        salario: parseFloat(this.salario)
       });
+
+      this.clienteService.cadastrarCliente(clienteValidado)
+        .subscribe((response: any) => {
+          console.log('Cliente cadastrado com sucesso:', response);
+         
+        }, (error: any) => {
+          console.error('Erro ao cadastrar cliente:', error);
+          
+        });
+    } catch (error) {
+      console.error('Erro ao validar dados do cliente:', error);
+    
+    }
   }
 }
