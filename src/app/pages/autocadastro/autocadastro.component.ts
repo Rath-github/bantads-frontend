@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ClienteService } from '../../service/cliente/cliente.service';
-import { NgxMaskDirective, NgxMaskPipe  } from 'ngx-mask';
+import { AutocadastroService } from 'src/app/service/autocadastro/autocadastro.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,13 @@ export class AutocadastroComponent {
   salario!: string;
 
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService: ClienteService, private autocadastroService: AutocadastroService) { }
+
+  ngOnInit(): void {
+    this.autocadastroService.cpfUsuario$.subscribe((novoValor) => {
+      this.cpf = novoValor;
+    });}
+
 
   cadastrar(): void {
     const novoCliente = {

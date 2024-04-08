@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../service/login/login.service';
+import { AutocadastroService } from 'src/app/service/autocadastro/autocadastro.service';
 import { LoginSchema } from '../../schema/login.schema';
 import { NgxMaskDirective, NgxMaskPipe  } from 'ngx-mask';
 import { Router } from '@angular/router';
@@ -16,7 +17,7 @@ export class LoginComponent {
   cpfInserido! : string;
   cpfValido : boolean = true;
 
-  constructor(private loginService: LoginService, private router: Router ) { }
+  constructor(private loginService: LoginService, private autocadastroService: AutocadastroService, private router: Router ) { }
 
   login(): void {
     const loginData = {
@@ -106,6 +107,7 @@ export class LoginComponent {
 
 irAutocadastro() {
     if (this.validarCPF(this.cpfInserido)) {
+      this.autocadastroService.recebeCpfUsuario(this.cpfInserido);
       this.router.navigate(['/autocadastro']);
     } else {
         console.log("CPF inválido");
