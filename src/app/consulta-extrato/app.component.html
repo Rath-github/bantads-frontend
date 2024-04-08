@@ -1,41 +1,58 @@
-<div class="user-info bg-yellow-400 py-8 text-center shadow-md mb-8">
-  <!-- informações do usuário -->
-</div>
-
-<div class="container bg-white border border-gray-300 rounded-lg shadow-md max-w-screen-md mx-auto p-4 text-center">
-  <h1 class="text-3xl text-blue-900 font-bold mb-5">Consulta de Extrato</h1>
-
-  <div class="filtro mb-4">
-    <label for="dataInicio" class="block mb-2 text-blue-900">Data de Início:</label>
-    <input type="date" id="dataInicio" class="border border-gray-300 rounded-md p-2 mb-2">
-
-    <label for="dataFim" class="block mb-2 text-blue-900">Data de Fim:</label>
-    <input type="date" id="dataFim" class="border border-gray-300 rounded-md p-2 mb-2">
-
-    <br><br>
-    <button class="bg-green-600 text-white font-bold rounded-md px-4 py-2 transition duration-300 hover:bg-green-700" (click)="consultarExtrato()">Consultar</button>
+<div class="container mx-auto mt-8">
+  <div class="user-info bg-yellow-400 py-8 text-center shadow-md mb-8">
+    <!-- informações do usuário -->
   </div>
 
-  <div *ngIf="extrato.length > 0" class="extrato mt-8">
-    <h2 class="text-2xl mb-4">Extrato:</h2>
+  <div class="bg-white border border-gray-300 rounded-lg shadow-md max-w-screen-md mx-auto p-4 text-center">
+    <h1 class="text-3xl text-blue-900 font-bold mb-5">Consulta de Saldo e Extrato</h1>
 
-    <table class="w-full border border-blue-900 border-collapse rounded-md shadow-md">
-      <thead>
-        <tr>
-          <th class="bg-blue-900 text-white text-lg py-2 px-4">Data/Hora</th>
-          <th class="bg-blue-900 text-white text-lg py-2 px-4">Operação</th>
-          <th class="bg-blue-900 text-white text-lg py-2 px-4">Cliente Origem/Destino</th>
-          <th class="bg-blue-900 text-white text-lg py-2 px-4">Valor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let transacao of extrato" class="hover:bg-gray-100">
-          <td class="border border-gray-300 text-lg py-2 px-4">{{ transacao.dataHora }}</td>
-          <td [ngClass]="{'text-red-500': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'text-green-500': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}" class="border border-gray-300 text-lg py-2 px-4">{{ transacao.operacao }}</td>
-          <td class="border border-gray-300 text-lg py-2 px-4">{{ transacao.cliente }}</td>
-          <td [ngClass]="{'text-red-500': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'text-green-500': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}" class="border border-gray-300 text-lg py-2 px-4">{{ transacao.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="saldo mb-8">
+      <h2 class="text-2xl mb-4">Saldo Atual:</h2>
+      <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
+        <p class="text-lg text-gray-700">Seu saldo é:</p>
+        <p class="font-bold text-green-500 text-2xl">{{ saldo | currency }}</p>
+      </div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300" (click)="consultarSaldo()">
+        Consultar Saldo
+      </button>
+      <div *ngIf="loadingSaldo" class="mt-4">
+        <p class="text-gray-600">Consultando saldo...</p>
+      </div>
+    </div>
+
+    <div class="extrato mb-8">
+      <h2 class="text-2xl mb-4">Extrato:</h2>
+      <div class="filtro mb-4">
+        <label for="dataInicio" class="block mb-2 text-blue-900">Data de Início:</label>
+        <input type="date" id="dataInicio" class="border border-gray-300 rounded-md p-2 mb-2">
+
+        <label for="dataFim" class="block mb-2 text-blue-900">Data de Fim:</label>
+        <input type="date" id="dataFim" class="border border-gray-300 rounded-md p-2 mb-2">
+
+        <br><br>
+        <button class="bg-green-600 text-white font-bold rounded-md px-4 py-2 transition duration-300 hover:bg-green-700" (click)="consultarExtrato()">Consultar Extrato</button>
+      </div>
+
+      <div *ngIf="extrato.length > 0" class="extrato mt-8">
+        <table class="w-full border border-blue-900 border-collapse rounded-md shadow-md">
+          <thead>
+            <tr>
+              <th class="bg-blue-900 text-white text-lg py-2 px-4">Data/Hora</th>
+              <th class="bg-blue-900 text-white text-lg py-2 px-4">Operação</th>
+              <th class="bg-blue-900 text-white text-lg py-2 px-4">Cliente Origem/Destino</th>
+              <th class="bg-blue-900 text-white text-lg py-2 px-4">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transacao of extrato" class="hover:bg-gray-100">
+              <td class="border border-gray-300 text-lg py-2 px-4">{{ transacao.dataHora }}</td>
+              <td [ngClass]="{'text-red-500': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'text-green-500': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}" class="border border-gray-300 text-lg py-2 px-4">{{ transacao.operacao }}</td>
+              <td class="border border-gray-300 text-lg py-2 px-4">{{ transacao.cliente }}</td>
+              <td [ngClass]="{'text-red-500': transacao.operacao === 'Transferência' || transacao.operacao === 'Saque', 'text-green-500': transacao.operacao === 'Depósito' || transacao.operacao === 'Transferência'}" class="border border-gray-300 text-lg py-2 px-4">{{ transacao.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
