@@ -13,7 +13,7 @@
         <tbody>
             <tr *ngFor="let pedido of pedidosAutocadastro" class="text-center">
                 <td class="border px-4 py-2 font-bold">{{ pedido.nome }}</td>
-                <td class="border px-4 py-2 font-bold">{{ pedido.cpf }}</td>
+                <td class="border px-4 py-2 font-bold">{{ formatarCPF(pedido.cpf) }}</td>
                 <td class="border px-4 py-2 font-bold">{{ pedido.salario }}</td>
                 <td class="border px-4 py-2">
                     <button (click)="Aprovar()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Aprovar</button>&nbsp;
@@ -40,8 +40,8 @@
                     <label for="razao" class="block text-sm font-bold mb-2">Razão</label>
                     <input type="text" id="razao" class="block w-full bg-gray-100 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Digite aqui...">
                 </div>
-                <a style="margin-top: 8px;" (click)="Recusar()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Enviar</a>&nbsp;
-                <a class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="toggleRecusarCard()">Cancelar</a>
+                <button style="margin-top: 8px;" (click)="Recusar()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Enviar</button>&nbsp;
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="toggleRecusarCard()">Cancelar</button>
             </div>
         </div>
     </div>

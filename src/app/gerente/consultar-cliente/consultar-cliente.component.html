@@ -27,13 +27,19 @@
                 <th class="px-4 py-2">Nome</th>
                 <th class="px-4 py-2">CPF</th>
                 <th class="px-4 py-2">Salário</th>
+                <th class="px-4 py-2">Cidade</th>
+                <th class="px-4 py-2">Estado</th>
+                <th class="px-4 py-2">Saldo</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="border px-4 py-2">{{ clienteFiltrado.nome }}</td>
-                <td class="border px-4 py-2">{{ formatarCPF(clienteFiltrado.cpf) }}</td>
-                <td class="border px-4 py-2">{{ clienteFiltrado.salario }}</td>
+                <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.nome }}</td>
+                <td class="border px-4 py-2 font-bold">{{ formatarCPF(clienteFiltrado.cpf) }}</td>
+                <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.salario }}</td>
+                <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.cidade }}</td>
+                <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.estado }}</td>
+                <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.saldoConta }}</td>
             </tr>
         </tbody>
     </table>
