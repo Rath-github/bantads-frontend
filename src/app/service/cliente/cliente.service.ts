@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ClienteSchema } from '../../schema/cliente.schema';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'http://localhost:3000/clientes';
 
   constructor(private http: HttpClient) { }
 
   // Método para cadastrar um novo cliente
-  cadastrarCliente(novoCliente: any): Observable<any> {
-    return this.http.post(this.apiUrl, novoCliente);
+  cadastrarCliente(cliente: any): Observable<any> {
+    return this.http.post(this.apiUrl, cliente);
   }
 
   // Método para obter o perfil do cliente

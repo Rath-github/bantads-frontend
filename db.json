@@ -46,6 +46,13 @@
       "email": "thiagodossantos315@gmail.com",
       "cpf": "109.538.619-02",
       "salario": 20000
+    },
+    {
+      "nome": "Thiago",
+      "email": "thiago@gmail.com",
+      "cpf": "10953861902",
+      "salario": 1000,
+      "id": "cDOxHyk"
     }
   ],
   "gerentes": [

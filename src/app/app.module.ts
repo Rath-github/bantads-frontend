@@ -15,6 +15,7 @@ import { DepositoComponent } from './pages/deposito/deposito.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
+import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
     SaqueComponent,
     TransferenciaComponent,
     ConsultaExtratoComponent,
+    HomeAdminComponent,
   ],
   imports: [
     BrowserModule,
