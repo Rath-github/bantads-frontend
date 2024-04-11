@@ -1,12 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class GerenteModule { }
+export interface Gerente {
+  nome: string;
+  cpf: string;
+  email: string;
+  telefone: number;
+  clientes: any[];
+}
