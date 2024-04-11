@@ -16,6 +16,7 @@ import { SaqueComponent } from './pages/saque/saque.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
+import { GerenciarGerenteComponent } from './pages/admin/gerenciar-gerente/gerenciar-gerente.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.componen
     TransferenciaComponent,
     ConsultaExtratoComponent,
     HomeAdminComponent,
+    GerenciarGerenteComponent,
   ],
   imports: [
     BrowserModule,

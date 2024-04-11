@@ -10,6 +10,7 @@ import { SaqueComponent } from './pages/saque/saque.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
+import { GerenciarGerenteComponent } from './pages/admin/gerenciar-gerente/gerenciar-gerente.component';
 
 
 
@@ -23,6 +24,8 @@ export const routes: Routes = [
   { path: 'transferencia', component: TransferenciaComponent },
   { path: 'extrato', component: ConsultaExtratoComponent },
   { path: 'HomeAdmin', component: HomeAdminComponent },
+  { path: 'GerenciarGerente', component: GerenciarGerenteComponent },
+  
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
