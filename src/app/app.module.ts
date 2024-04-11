@@ -19,8 +19,12 @@ import { NgxMaskModule } from 'ngx-mask';
     AppRoutingModule
     HttpClientModule
     NgxMaskModule.forRoot()
+    RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [RotasService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(private rotasService: RotasService) {
+    this.rotasService.configurarRotas();
+}
