@@ -111,7 +111,7 @@
           "telefone": "(11) 99999-9999",
           "salario": 2000,
           "limite": 1000,
-          "saldo": 4000
+          "saldo": -100
         },
         {
           "numConta": 2,
