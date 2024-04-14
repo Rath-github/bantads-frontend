@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Cliente } from 'src/app/models/cliente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class ClienteService {
 
   // Método para cadastrar um novo cliente
   cadastrarCliente(novoCliente: any): Observable<any> {
-    return this.http.post(this.apiUrl, novoCliente);
+    return this.http.post(`${this.apiUrl}clientes`, novoCliente);
   }
 
   // Método para obter o perfil do cliente
@@ -27,6 +29,32 @@ export class ClienteService {
 
   depositar(numeroConta: string, valor: number): Observable<any> {
     const dadosDeposito = { numeroConta, valor };
-    return this.http.post(`${this.apiUrl}/deposito`, dadosDeposito);
+    return this.http.post(`${this.apiUrl}deposito`, dadosDeposito);
+  }
+
+  carregarClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${this.apiUrl}clientes`);
+  }
+
+  verificarContaExistente(cpf: string): Observable<boolean> {
+    return this.carregarClientes().pipe(
+      map(clientes => {
+        return clientes.some(cliente => cliente.cpf === cpf);
+      })
+    );
+  }
+
+  novoNumeroConta(): Observable<number> {
+    return this.carregarClientes().pipe(
+      map(clientes => {
+        let numeroConta: number = 0;
+        for (const cliente of clientes) {
+          if (numeroConta < cliente.numConta) {
+            numeroConta = cliente.numConta;
+          }
+        }
+        return numeroConta + 1;
+      })
+    );
   }
 }
