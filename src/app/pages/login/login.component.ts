@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../service/login/login.service';
 import { AutocadastroService } from 'src/app/service/autocadastro/autocadastro.service';
 import { LoginSchema } from '../../schema/login.schema';
+import { validarCPF } from '../../schema/login.schema';
 import { NgxMaskDirective, NgxMaskPipe  } from 'ngx-mask';
 import { Router } from '@angular/router';
 import { z, ZodError } from 'zod';
@@ -59,57 +60,16 @@ export class LoginComponent {
     this.cpfInserido = cpf;
   }
   
-  validarCPF( cpfInserido : string ) {
-    cpfInserido = cpfInserido.replace(/[^\d]+/g,''); // Remove caracteres não numéricos
-
-    // Verifica se o CPF tem 11 dígitos
-    if (cpfInserido.length !== 11) {
-        this.cpfValido = false;
-        return false;
-    }
-
-    // Verifica se todos os dígitos são iguais, o que torna o CPF inválido
-    if (/^(\d)\1{10}$/.test(cpfInserido)) {
-        this.cpfValido = false;
-        return false;
-    }
-
-    // Calcula o primeiro dígito verificador
-    let soma = 0;
-    for (let i = 0; i < 9; i++) {
-        soma += parseInt(cpfInserido.charAt(i)) * (10 - i);
-    }
-    let resto = 11 - (soma % 11);
-    let dv1 = resto === 10 || resto === 11 ? 0 : resto;
-
-    // Verifica se o primeiro dígito verificador é igual ao CPF fornecido
-    if (dv1 !== parseInt(cpfInserido.charAt(9))) {
-        this.cpfValido = false;
-        return false;
-    }
-
-    // Calcula o segundo dígito verificador
-    soma = 0;
-    for (let i = 0; i < 10; i++) {
-        soma += parseInt(cpfInserido.charAt(i)) * (11 - i);
-    }
-    resto = 11 - (soma % 11);
-    let dv2 = resto === 10 || resto === 11 ? 0 : resto;
-
-    // Verifica se o segundo dígito verificador é igual ao CPF fornecido
-    if (dv2 !== parseInt(cpfInserido.charAt(10))) {
-        this.cpfValido = false;
-        return false;
-    }
-    return true;
-}
-
+  validarCPF() {
+    this.cpfValido = validarCPF(this.cpfInserido);
+  }
 
 irAutocadastro() {
-    if (this.validarCPF(this.cpfInserido)) {
+    if (validarCPF(this.cpfInserido)) {
       this.autocadastroService.recebeCpfUsuario(this.cpfInserido);
       this.router.navigate(['/autocadastro']);
     } else {
+        this.cpfValido = false;
         console.log("CPF inválido");
     }
 }

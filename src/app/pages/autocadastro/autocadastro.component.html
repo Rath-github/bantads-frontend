@@ -1,4 +1,4 @@
-<div class="h-screen mx-auto flex flex-col items-center bg-slate-100">
+<div class="h-screen-full mx-auto flex flex-col items-center bg-slate-100">
   <div class="flex justify-end w-full mb-4">
     <a routerLink="/login">
       <svg class="w-10 h-10 text-gray-700 dark:text-zinc-800 hover:text-zinc-500 aria-hidden=true m-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -10,40 +10,79 @@
   <form (submit)="cadastrar()" class="w-full max-w-md">
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-      <input type="text" class="border rounded-md px-4 py-2 w-full" [(ngModel)]="nome" placeholder="name" required>
-    </div>
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-      <input 
-          type="email" class="border rounded-md px-4 py-2 w-full" 
-          [(ngModel)]="email" 
-          placeholder="name@example.com"
-          required
-        >
+      <input type="text" class="border rounded-md px-4 py-2 w-full" name="clienteNome" [(ngModel)]="novoCliente.nome" placeholder="Nome completo" required>
     </div>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2">CPF:</label>
-      <input 
-            type="text" class="border rounded-md px-4 py-2 w-full" 
-            [(ngModel)]="cpf" 
-            value={{cpf}}
+      <input type="text" class="border rounded-md px-4 py-2 w-full" 
+            name="cpfCliente"
+            [(ngModel)]="novoCliente.cpf" 
+    
             mask="000.000.000-00"  
             placeholder="000.000.000-00"
             required
             >
     </div>
     <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+      <input name="clienteEmail" type="text" class="border rounded-md px-4 py-2 w-full" 
+          [(ngModel)]="novoCliente.email" 
+          placeholder="name@example.com"
+          required
+        >
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Telefone:</label>
+      <input name="clienteTelefone" type="text" class="border rounded-md px-4 py-2 w-full" 
+          [(ngModel)]="novoCliente.telefone" 
+          placeholder="(00)00000-0000"
+          required
+        >
+    </div>
+    <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2">Salário:</label>
-      <input 
-          type="number" class="border rounded-md px-4 py-2 w-full" 
-          [(ngModel)]="salario" 
+      <input name="clienteSalario" type="number" class="border rounded-md px-4 py-2 w-full" 
+          [(ngModel)]="novoCliente.salario" 
           mask="000,00"   
           placeholder="2000,00"
           required
           >
     </div>
-    
-    <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded w-full">
+    <div class="mb-4 flex flex-col">
+      <label class="block text-gray-700 text-sm font-bold mb-2">CEP:</label>
+        <input type="text" class="border rounded-md px-4 py-2 w-full" name="clienteCep"
+            [(ngModel)]="novoCliente.endereco.cep" 
+            (ngModelChange)="buscaCep()" 
+            placeholder="00000-000"
+            required>
+      <label class="block text-gray-700 text-sm font-bold  mt-4 mb-2">Endereço:</label>
+      <div class="flex md:flex-row">
+        <input type="text" class="border rounded-md px-4 py-2 w-3/4" name="clienteLogradouro"
+            [(ngModel)]="novoCliente.endereco.logradouro"  
+            placeholder="Logradouro"
+            required>
+        <input type="text" class="border rounded-md px-4 py-2 ml-2 w-1/4" name="clienteNumCasa"
+            [(ngModel)]="novoCliente.endereco.numero"  
+            placeholder="n°"
+            required>
+      </div>
+      <div class="flex md:flex-row mt-4 mb-4">
+        <input type="text" class="border rounded-md px-4 py-2 w-2/5 mr-2" name="clienteBairro"
+            [(ngModel)]="novoCliente.endereco.bairro"  
+            placeholder="bairro"
+            required>
+        <input type="text" class="border rounded-md px-4 py-2 w-2/5" name="clienteCidade"
+            [(ngModel)]="novoCliente.endereco.cidade"  
+            placeholder="cidade"
+            required>
+        <input type="text" class="border rounded-md px-4 py-2 w-1/5 ml-2" name="clienteEstado"
+            [(ngModel)]="novoCliente.endereco.estado"  
+            placeholder="estado"
+            required>
+      </div>
+      
+    </div>
+    <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded w-full mb-10">
       Cadastrar
     </button>
   </form>
