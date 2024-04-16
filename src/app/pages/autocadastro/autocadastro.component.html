@@ -1,0 +1,43 @@
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4">Autocadastro</h1>
+  <form (submit)="cadastrar()">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
+      <input type="text" class="border rounded-md px-4 py-2 w-full" [(ngModel)]="nome" name="nome" placeholder="name" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+      <input 
+          type="email" class="border rounded-md px-4 py-2 w-full" 
+          [(ngModel)]="email" name="email" 
+          placeholder="name@example.com"
+          required
+        >
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">CPF:</label>
+      <input 
+            type="text" class="border rounded-md px-4 py-2 w-full" 
+            [(ngModel)]="cpf" name="cpf" 
+            mask="000.000.000-00"  
+            placeholder="000.000.000-00"
+            required
+            minlength="14"
+            maxlength="14"
+            >
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Salário:</label>
+      <input 
+          type="number" class="border rounded-md px-4 py-2 w-full" 
+          [(ngModel)]="salario" name="salario" 
+          placeholder="2000,00"
+          required
+          >
+    </div>
+    
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Cadastrar
+    </button>
+  </form>
+</div>

@@ -14,7 +14,8 @@
         "estado": "SP"
       },
       "telefone": "(11) 99999-9999",
-      "salario": 2000.00
+      "salario": 2000,
+      "id": "123e"
     },
     {
       "nome": "Maria Oliveira",
@@ -30,7 +31,28 @@
         "estado": "RJ"
       },
       "telefone": "(21) 88888-8888",
-      "salario": 3000.00
+      "salario": 3000,
+      "id": "effc"
+    },
+    {
+      "id": "31c5"
+    },
+    {
+      "id": "cb18"
+    },
+    {
+      "id": "faa2",
+      "nome": "Thiago Dos Santos",
+      "email": "thiagodossantos315@gmail.com",
+      "cpf": "109.538.619-02",
+      "salario": 20000
+    },
+    {
+      "nome": "Thiago",
+      "email": "thiago@gmail.com",
+      "cpf": "10953861902",
+      "salario": 1000,
+      "id": "cDOxHyk"
     }
   ],
   "gerentes": [
@@ -38,13 +60,31 @@
       "nome": "Carlos Santos",
       "email": "carlos@example.com",
       "cpf": "111.222.333-44",
-      "telefone": "(11) 77777-7777"
+      "telefone": "(11) 77777-7777",
+      "id": "722e"
     },
     {
       "nome": "Ana Oliveira",
       "email": "ana@example.com",
       "cpf": "555.666.777-88",
-      "telefone": "(21) 66666-6666"
+      "telefone": "(21) 66666-6666",
+      "id": "1771"
+    },
+    {
+      "nome": "Thiago",
+      "cpf": "109.538.619-02",
+      "email": "thiagodossantos315@gmail.com",
+      "telefone": "41997848601",
+      "clientes": [],
+      "id": "dgcLaCt"
+    },
+    {
+      "nome": "Diego",
+      "cpf": "10925489498",
+      "email": "56498498498",
+      "telefone": "498498489498",
+      "clientes": [],
+      "id": "_fFqNq6"
     }
   ],
   "administrador": {
