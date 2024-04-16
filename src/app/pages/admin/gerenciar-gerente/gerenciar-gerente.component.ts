@@ -62,11 +62,16 @@ export class GerenciarGerenteComponent implements OnInit {
       const index = this.gerentes.findIndex((gerente) => gerente.cpf === this.gerenteSelecionado!.cpf);
       if(index !== -1) {
         this.http.put(`http://localhost:3000/gerentes/${this.gerenteSelecionado!.cpf}`, this.gerenteSelecionado).subscribe(() => {
-        this.gerentes[index] = { ...this.gerenteSelecionado! }; // Ensure a deep copy is assigned
-        this.mostrarEditar = false;
-        this.gerenteSelecionado = null; // Reset gerenteSelecionado after editing
-      });
+          this.gerentes[index] = { ...this.gerenteSelecionado! }; // Ensure a deep copy is assigned
+          this.mostrarEditar = false;
+          this.gerenteSelecionado = null; // Reset gerenteSelecionado after editing
+        });
+      } else {
+        console.error('Gerente não encontrado para edição.');
       }
+    } else {
+      console.error('Nenhum gerente selecionado para edição.');
     }
   }
 }
+
