@@ -5,6 +5,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask  } from 'ngx-mask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GerenteModule } from './gerente/gerente.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GerenteModule } from './gerente/gerente.module';
     FormsModule,
     GerenteModule,
     NgxMaskDirective, 
-    NgxMaskPipe
+    NgxMaskPipe,
+    HttpClientModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

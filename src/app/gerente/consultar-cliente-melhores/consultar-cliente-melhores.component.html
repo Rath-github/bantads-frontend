@@ -1,29 +1,31 @@
-<div class="p-8">
-    <h2 class="text-2xl font-bold mb-4">Gerente - Consulta Melhores Clientes</h2>     
+<div class="p-8 flex flex-col items-center h-full">
+    <h2 class="text-2xl font-bold mb-4">Gerente - Consulta 3 Melhores Clientes</h2>
 
-    <table style="margin-bottom: 8px;" class="table-auto w-full bg-secondary border border-gray-400 rounded-lg shadow-lg">
-        <thead class="bg-primary text-center text-white">
-            <tr>
-                <th class="px-4 py-2">Nome</th>
-                <th class="px-4 py-2">CPF</th>
-                <th class="px-4 py-2">Cidade</th>
-                <th class="px-4 py-2">Estado</th>
-                <th class="px-4 py-2">Saldo da Conta</th>
-                <th class="px-4 py-2">Detalhes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cliente of clientes.slice(0, 3)" class="text-center">
-              <td class="border px-4 py-2 font-bold">{{ cliente.nome }}</td>
-              <td class="border px-4 py-2 font-bold">{{ formatarCPF(cliente.cpf) }}</td>
-              <td class="border px-4 py-2 font-bold">{{ cliente.cidade }}</td>
-              <td class="border px-4 py-2 font-bold">{{ cliente.estado }}</td>
-              <td class="border px-4 py-2 font-bold">{{ cliente.saldoConta }}</td>
-              <td class="border px-4 py-2 font-bold"><a [routerLink]="['/cliente', cliente.cpf]">Detalhes</a></td>
-            </tr>
-          </tbody>
-                
-    </table>
-
-    <a class="btn btn-sm btn-secondary" [routerLink]="['/gerente']">Voltar</a>&nbsp;
+    <div class="flex flex-col items-center flex-grow">
+        <table class="table-auto bg-secondary border border-gray-400 rounded-lg shadow-lg" *ngIf="clientes.length > 0">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th class="px-4 py-2">Nome</th>
+                    <th class="px-4 py-2">E-mail</th>
+                    <th class="px-4 py-2">CPF</th>
+                    <th class="px-4 py-2">Endereço</th>
+                    <th class="px-4 py-2">Telefone</th>
+                    <th class="px-4 py-2">Saldo</th>
+                    <th class="px-4 py-2">Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of melhoresClientes">
+                    <td class="border px-4 py-2 font-bold">{{ cliente.nome }}</td>
+                    <td class="border px-4 py-2 font-bold">{{ cliente.email }}</td>
+                    <td class="border px-4 py-2 font-bold">{{ cliente.cpf }}</td>
+                    <td class="border px-4 py-2 font-bold">{{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }}, {{ cliente.endereco.numero }} {{ cliente.endereco.complemento }}, {{ cliente.endereco.cep }} {{ cliente.endereco.cidade }} - {{ cliente.endereco.estado }}</td>
+                    <td class="border px-4 py-2 font-bold">{{ cliente.telefone }}</td>
+                    <td class="border px-4 py-2 font-bold">{{ cliente.saldoConta }}</td>
+                    <td class="border px-4 py-2 font-bold"><button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="mostrarDetalhes(cliente)">Detalhes</button></td>
+                </tr>
+            </tbody>
+        </table>
+        &nbsp;<button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded" [routerLink]="['/gerente']">Voltar</button>
+    </div>
 </div>
