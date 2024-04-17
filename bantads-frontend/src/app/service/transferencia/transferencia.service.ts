@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TransferenciaService {
-  private apiUrl = 'http://localhost:3000/transferencia';
+  private apiUrl = 'http://localhost:4000/clientes'; //AJUSTAR PARA /3000 CASO NECESSÁRIO 
 
   constructor(private http: HttpClient) { }
 
   transferir(numeroContaOrigem: string, numeroContaDestino: string, valor: number): Observable<any> {
     const dadosTransferencia = { numeroContaOrigem, numeroContaDestino, valor };
-    return this.http.post(`${this.apiUrl}/transferir`, dadosTransferencia);
+    return this.http.post(`${this.apiUrl}`, dadosTransferencia);
   }
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteService {
-  private apiUrl = 'http://localhost:3000/';
+  private apiUrl = 'http://localhost:3000/clientes';
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class ClienteService {
 
  
   alterarPerfil(dados: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}perfil`, dados);
+    return this.http.put(`${this.apiUrl}clientes`, dados);
   }
 
   
