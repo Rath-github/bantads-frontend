@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 interface DadosCliente {
-  cpf: string;
   nome: string;
+  cpf: string;
   salario: number;
-  cidade: string;
-  estado: string;
-  saldoConta: number;
 }
 
 @Component({
@@ -14,30 +12,48 @@ interface DadosCliente {
   templateUrl: './tela-inicial-gerente.component.html',
   styleUrls: ['./tela-inicial-gerente.component.css']
 })
-export class TelaInicialGerenteComponent {
+export class TelaInicialGerenteComponent implements OnInit {
+  pedidosAutocadastro: DadosCliente[] = [];
 
-  pedidosAutocadastro: DadosCliente[] = [
-    { cpf: '11111111111', nome: 'teste 1000', salario: 1000, cidade: 'Curitiba', estado: 'Paraná', saldoConta: 2000 },
-    { cpf: '22222222222', nome: 'teste 2000', salario: 2000, cidade: 'Curitiba', estado: 'Paraná', saldoConta: 4000 },
-    { cpf: '33333333333', nome: 'teste 3000', salario: 3000, cidade: 'Curitiba', estado: 'Paraná', saldoConta: 6000 },
-    { cpf: '44444444444', nome: 'teste 4000', salario: 4000, cidade: 'Montes Claros', estado: 'Minas Gerais', saldoConta: 8000 },
-    { cpf: '55555555555', nome: 'teste 5000', salario: 5000, cidade: 'Campo Grande', estado: 'Mato Grosso do Sul', saldoConta: 10000 },
-  ];
+  mostrarRecusarCard: boolean = false;
 
-  formatarCPF(cpf: string): string {
-    return cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
-}
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.obterPedidosAutocadastro();
+  }
+
+  obterPedidosAutocadastro() {
+    this.http.get<any[]>('http://localhost:3000/autocadastro')
+      .subscribe(
+        data => {
+          if (Array.isArray(data) && data.length > 0) {
+            this.pedidosAutocadastro = data.map((cliente: any) => {
+              return {
+                nome: cliente.nome,
+                cpf: cliente.cpf,
+                salario: cliente.salario
+              };
+            });
+          } else {
+            console.error('Dados de cliente inválidos no JSON:', data);
+          }
+        },
+        error => {
+          console.error('Erro ao obter dados do JSON:', error);
+        }
+      );
+  }
 
   Aprovar() {
     alert("Cadastro aprovado!");
-    //Adicionar lógica de Aprovação
-  }
-  Recusar() {
-    alert("Cadastro recusado!");
-    //Adicionar lógica de Reprovação
+    // Adicionar lógica de Aprovação
   }
 
-  mostrarRecusarCard: boolean = false;
+  Recusar() {
+    alert("Cadastro recusado!");
+    // Adicionar lógica de Reprovação
+  }
 
   toggleRecusarCard() {
     this.mostrarRecusarCard = !this.mostrarRecusarCard;
