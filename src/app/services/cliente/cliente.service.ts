@@ -11,17 +11,14 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
-  // Método para cadastrar um novo cliente
   cadastrarCliente(cliente: any): Observable<any> {
     return this.http.post(this.apiUrl, cliente);
   }
 
-  // Método para obter o perfil do cliente
   getPerfil(): Observable<any> {
     return this.http.get(`${this.apiUrl}clientes`);
   }
 
-  // Método para alterar o perfil do cliente
   alterarPerfil(dados: any): Observable<any> {
     return this.http.put(`${this.apiUrl}perfil`, dados);
   }
@@ -30,4 +27,9 @@ export class ClienteService {
     const dadosDeposito = { numeroConta, valor };
     return this.http.post(`${this.apiUrl}/deposito`, dadosDeposito);
   }
+
+  obterInformacoes(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}clientes`, dados);
+  }
+  
 }
