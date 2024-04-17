@@ -1,0 +1,142 @@
+{
+  "clientes": [
+    {
+      "nome": "João Silva",
+      "email": "joao@example.com",
+      "cpf": "123.456.789-10",
+      "endereco": {
+        "tipo": "Rua",
+        "logradouro": "Rua das Flores",
+        "numero": "123",
+        "complemento": "Apto 101",
+        "cep": "12345-678",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "telefone": "(11) 99999-9999",
+      "salario": 2000,
+      "id": "123e",
+      "conta": {
+        "banco": "Banco ABC",
+        "agencia": "1234",
+        "numeroConta": "56789",
+        "saldo": 1500,
+        "historicoTransacoes": [
+          {
+            "data": "2024-04-12",
+            "descricao": "Depósito inicial",
+            "valor": 1500
+          }
+        ]
+      }
+    },
+    {
+      "nome": "Maria Oliveira",
+      "email": "maria@example.com",
+      "cpf": "987.654.321-10",
+      "endereco": {
+        "tipo": "Avenida",
+        "logradouro": "Avenida Central",
+        "numero": "456",
+        "complemento": "Casa",
+        "cep": "54321-987",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ"
+      },
+      "telefone": "(21) 88888-8888",
+      "salario": 3000,
+      "id": "effc",
+      "conta": {
+        "banco": "Banco XYZ",
+        "agencia": "5678",
+        "numeroConta": "12345",
+        "saldo": 2500,
+        "historicoTransacoes": [
+          {
+            "data": "2024-04-10",
+            "descricao": "Salário",
+            "valor": 2500
+          }
+        ]
+      }
+    },
+    {
+      "id": "6bef",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "84fc",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "7a68",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "e902",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "cb0e",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "014e",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "6d23",
+      "numeroConta": "123",
+      "valor": 3
+    },
+    {
+      "id": "6d9b",
+      "numeroConta": "12345",
+      "valor": 20
+    },
+    {
+      "id": "3dd3",
+      "numeroConta": "12345",
+      "valor": 20
+    },
+    {
+      "id": "fda8",
+      "numeroConta": "123",
+      "valor": 2
+    },
+    {
+      "id": "f31f",
+      "numeroContaOrigem": "123",
+      "numeroContaDestino": "12345",
+      "valor": 2
+    }
+  ],
+  "gerentes": [
+    {
+      "nome": "Carlos Santos",
+      "email": "carlos@example.com",
+      "cpf": "111.222.333-44",
+      "telefone": "(11) 77777-7777",
+      "id": "722e"
+    },
+    {
+      "nome": "Ana Oliveira",
+      "email": "ana@example.com",
+      "cpf": "555.666.777-88",
+      "telefone": "(21) 66666-6666",
+      "id": "1771"
+    }
+  ],
+  "administrador": {
+    "nome": "Fernanda Souza",
+    "email": "fernanda@example.com",
+    "cpf": "999.888.777-66",
+    "telefone": "(11) 55555-5555"
+  }
+}
