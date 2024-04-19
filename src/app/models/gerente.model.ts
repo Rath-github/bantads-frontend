@@ -6,4 +6,5 @@ export class Gerente {
     email : string = '';
     telefone : number = 0;
     clientes: Cliente[] = [];
+    senha : string = '';
 }

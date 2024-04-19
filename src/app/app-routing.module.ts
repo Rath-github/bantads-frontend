@@ -8,11 +8,13 @@ import { HomeAdminComponent } from './pages/home-admin/home-admin.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
   { path: 'autocadastro', component: AutocadastroComponent },
   { path: 'gerenciaGerente', component: GerenciarGerenteComponent},
   { path: 'relatorioCliente', component: RelatorioClientesComponent},
   { path: 'homeAdmin', component: HomeAdminComponent},
-  { path: 'login', component: LoginComponent},
+ 
 ];
 
 @NgModule({

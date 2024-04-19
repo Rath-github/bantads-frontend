@@ -11,6 +11,7 @@
         "numero": "123",
         "complemento": "Apto 101",
         "cep": "12345-678",
+        "bairro": "",
         "cidade": "São Paulo",
         "estado": "SP"
       },
@@ -18,8 +19,8 @@
       "telefone": "(11) 99999-9999",
       "salario": 2000,
       "limite": 1000,
-      "saldo": 4000,
-      "id": "d5d3"
+      "saldo": -100,
+      "senha": "1234567"
     },
     {
       "numConta": 2,
@@ -32,6 +33,7 @@
         "numero": "456",
         "complemento": "Casa 202",
         "cep": "54321-987",
+        "bairro": "",
         "cidade": "Rio de Janeiro",
         "estado": "RJ"
       },
@@ -40,7 +42,7 @@
       "salario": 2500,
       "limite": 1500,
       "saldo": 3000,
-      "id": "8822"
+      "senha": ""
     },
     {
       "numConta": 3,
@@ -53,6 +55,7 @@
         "numero": "789",
         "complemento": "",
         "cep": "98765-432",
+        "bairro": "",
         "cidade": "Belo Horizonte",
         "estado": "MG"
       },
@@ -61,10 +64,9 @@
       "salario": 1800,
       "limite": 1200,
       "saldo": 2000,
-      "id": "6271"
+      "senha": ""
     },
     {
-      "id": "67ad",
       "numConta": 4,
       "status": "pendente",
       "nome": "igor",
@@ -83,7 +85,8 @@
       "telefone": "41997379627",
       "salario": 2000,
       "limite": 1000,
-      "saldo": 0
+      "saldo": 0,
+      "senha": ""
     }
   ],
   "gerentes": [
@@ -104,6 +107,7 @@
             "numero": "123",
             "complemento": "Apto 101",
             "cep": "12345-678",
+            "bairro": "",
             "cidade": "São Paulo",
             "estado": "SP"
           },
@@ -111,7 +115,8 @@
           "telefone": "(11) 99999-9999",
           "salario": 2000,
           "limite": 1000,
-          "saldo": -100
+          "saldo": -100,
+          "senha": "1234"
         },
         {
           "numConta": 2,
@@ -124,6 +129,7 @@
             "numero": "456",
             "complemento": "Casa 202",
             "cep": "54321-987",
+            "bairro": "",
             "cidade": "Rio de Janeiro",
             "estado": "RJ"
           },
@@ -131,9 +137,11 @@
           "telefone": "(21) 88888-8888",
           "salario": 2500,
           "limite": 1500,
-          "saldo": 3000
+          "saldo": 3000,
+          "senha": ""
         }
       ],
+      "senha": "1234",
       "id": "e3cb"
     },
     {
@@ -153,6 +161,7 @@
             "numero": "789",
             "complemento": "",
             "cep": "98765-432",
+            "bairro": "",
             "cidade": "Belo Horizonte",
             "estado": "MG"
           },
@@ -160,7 +169,8 @@
           "telefone": "(31) 77777-7777",
           "salario": 1800,
           "limite": 1200,
-          "saldo": 2000
+          "saldo": 2000,
+          "senha": ""
         },
         {
           "numConta": 4,
@@ -173,6 +183,7 @@
             "numero": "987",
             "complemento": "Bloco B",
             "cep": "87654-321",
+            "bairro": "",
             "cidade": "Curitiba",
             "estado": "PR"
           },
@@ -180,9 +191,11 @@
           "telefone": "(41) 66666-6666",
           "salario": 2200,
           "limite": 1300,
-          "saldo": 3500
+          "saldo": 3500,
+          "senha": ""
         }
       ],
+      "senha": "12345",
       "id": "7123"
     }
   ],

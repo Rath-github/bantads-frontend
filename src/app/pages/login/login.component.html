@@ -7,11 +7,12 @@
         <form action="" class="flex flex-col gap-4 w-full max-w-xs">
             <h1 class="text-3xl font-semibold text-center mb-4 text-zinc-700">Login</h1>
             <div class="flex flex-col gap-1">
-                <label for="">Nome</label>
+                <label for="">Email</label>
                 <input 
                     type="text" 
                     name="nome" 
                     class="border border-zinc-200 shadow-sm rounded h-10 px-3"
+                    [(ngModel)]="email"
                 >
             </div>
             
@@ -20,11 +21,12 @@
                 <input 
                     type="password" 
                     name="password" 
-                    class="border border-zinc-200 shadow-sm rounded h-10 px-3">
+                    class="border border-zinc-200 shadow-sm rounded h-10 px-3"
+                    [(ngModel)]="password">
             </div>
             
-            <a routerLink="/clienteHome" class="bg-emerald-500 rounded font-semibold justify-center items-center flex text-white h-10
-               hover:bg-emerald-600 ">Logar</a>
+            <button (click)="login()" class="bg-emerald-500 rounded font-semibold justify-center items-center flex text-white h-10
+               hover:bg-emerald-600 ">Logar</button>
         </form>
     </div>
     <div id="cadastro" class="p-10 flex flex-col justify-center items-center w-1/2">

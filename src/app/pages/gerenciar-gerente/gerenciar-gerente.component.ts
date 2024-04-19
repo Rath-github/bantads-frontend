@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente.model';
 import { Gerente } from 'src/app/models/gerente.model';
+import { GerenteService } from 'src/app/service/gerente/gerente.service';
 
 @Component({
   selector: 'app-gerenciar-gerente',
@@ -8,37 +9,16 @@ import { Gerente } from 'src/app/models/gerente.model';
   styleUrls: ['./gerenciar-gerente.component.css']
 })
 export class GerenciarGerenteComponent {
+  constructor(private gerenteService : GerenteService){};
 
-  //dados ficticios para teste
-  gerentes : Gerente[] = [
-    {
-      nome : 'Maria',
-      cpf : '111.222.333-44' ,
-      email : 'maria@gmail.com',
-      telefone : 7812345678,
-      clientes : [ {
-        "numConta": 1,
-        "status": "pendente",
-        "nome": "João Silva",
-        "email": "joao@example.com",
-        "cpf": "123.456.789-10",
-        "endereco": {
-          "logradouro": "Rua das Flores",
-          "numero": "123",
-          "complemento": "Apto 101",
-          "cep": "12345-678",
-          "cidade": "São Paulo",
-          "estado": "SP"
-        },
-        "gerente": "Ana Oliveira",
-        "telefone": "(11) 99999-9999",
-        "salario": 2000,
-        "limite": 1000,
-        "saldo": 4000,
-        "senha":"1234"
-      }]
-    },
-  ];
+  gerentes : Gerente [] = [];
+  
+  ngOnInit(): void {
+    this.gerenteService.carregarGerentes().subscribe(gerentes=>{
+      this.gerentes = gerentes;
+    });
+  }
+
 
   novoGerente : Gerente = {
     nome : '',
@@ -46,6 +26,7 @@ export class GerenciarGerenteComponent {
     email : '',
     telefone : 0,
     clientes : [],
+    senha : '',
 };
 
 gerenteSelecionado : Gerente = {
@@ -54,6 +35,7 @@ gerenteSelecionado : Gerente = {
   email : '',
   telefone : 0,
   clientes : [],
+  senha : '',
 };
 
 mostrarNovo : boolean = false;
