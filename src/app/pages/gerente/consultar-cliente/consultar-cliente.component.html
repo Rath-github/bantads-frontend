@@ -1,0 +1,46 @@
+<div class="container mx-auto text-center">
+  <div class="flex justify-center">
+      <div class="w-3/4">
+          <div class="bg-white border border-gray-300 rounded-lg shadow-lg mb-8">
+              <h3 class="bg-gray-200 text-lg font-bold px-4 py-2">Consulta Cliente</h3>
+              <div class="p-4">
+                  <div class="flex justify-center">
+                      <form #formRef="ngForm">
+                          <div class="mb-4">
+                              <label for="cpf" class="block text-sm font-bold mb-2">CPF</label>
+                              <input type="text" class="form-input w-full border border-gray-300 rounded py-2 px-4" id="cpf" name="cpf" mask="000.000.000-00" placeholder="000.000.000-00" [(ngModel)]="cpfConsultado" maxlength="14" required (keydown.enter)="consultarCliente(); $event.preventDefault() ">
+                          </div>
+                          <div>
+                              <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" type="button" (click)="consultarCliente()">Consultar</button>
+                              <button class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded" [routerLink]="['/gerente']">Voltar</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <table class="table-auto bg-secondary border border-gray-400 rounded-lg shadow-lg mx-auto" *ngIf="clienteFiltrado">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th class="px-4 py-2">Nome</th>
+          <th class="px-4 py-2">E-mail</th>
+          <th class="px-4 py-2">CPF</th>
+          <th class="px-4 py-2">Endereço</th>
+          <th class="px-4 py-2">Telefone</th>
+          <th class="px-4 py-2">Salário</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="clienteFiltrado">
+        <tr>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.nome }}</td>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.email }}</td>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.cpf }}</td>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.endereco.tipo }} {{ clienteFiltrado.endereco.logradouro }}, {{ clienteFiltrado.endereco.numero }} {{ clienteFiltrado.endereco.complemento }}, {{ clienteFiltrado.endereco.cep }} {{ clienteFiltrado.endereco.cidade }} - {{ clienteFiltrado.endereco.estado }}</td>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.telefone }}</td>
+          <td class="border px-4 py-2 font-bold">{{ clienteFiltrado.salario }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
