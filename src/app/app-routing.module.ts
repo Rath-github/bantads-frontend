@@ -12,6 +12,9 @@ import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
 import { GerenciarGerenteComponent } from './pages/admin/gerenciar-gerente/gerenciar-gerente.component';
 import { GerenteHomeComponent } from './pages/gerente/gerente-home/gerente-home.component'
+import { ConsultarClienteComponent } from './pages/gerente/consultar-cliente/consultar-cliente.component'
+import { ConsultarClienteTodosComponent } from './pages/gerente/consultar-cliente-todos/consultar-cliente-todos.component'
+import { ConsultarClienteMelhoresComponent } from './pages/gerente/consultar-cliente-melhores/consultar-cliente-melhores.component'
 
 
 export const routes: Routes = [
@@ -23,9 +26,12 @@ export const routes: Routes = [
   { path: 'saque', component: SaqueComponent },
   { path: 'transferencia', component: TransferenciaComponent },
   { path: 'extrato', component: ConsultaExtratoComponent },
-  { path: 'HomeAdmin', component: HomeAdminComponent },
-  { path: 'GerenciarGerente', component: GerenciarGerenteComponent },
-  { path: 'HomeGerente', component: GerenteHomeComponent},
+  { path: 'admin/HomeAdmin', component: HomeAdminComponent },
+  { path: 'admin/GerenciarGerente', component: GerenciarGerenteComponent },
+  { path: 'gerente/HomeGerente', component: GerenteHomeComponent},
+  { path: 'gerente/consultar-cliente', component: ConsultarClienteComponent },
+  { path: 'gerente/consultar-cliente-todos', component: ConsultarClienteTodosComponent },
+  { path: 'gerente/consultarClienteMelhores', component: ConsultarClienteMelhoresComponent },
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
