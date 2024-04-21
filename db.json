@@ -87,27 +87,10 @@
       "saldo": 0
     },
     {
-      "id": "2766",
-      "numConta": 5,
-      "status": "pendente",
-      "nome": "Thiago",
+      "nome": "Thiago dos Santos",
       "email": "thiagodossantos315@gmail.com",
-      "cpf": "109.538.619-02",
-      "endereco": {
-        "logradouro": "Rua Arno Feliciano de Castilho",
-        "numero": "",
-        "complemento": "",
-        "cep": "82820-010",
-        "bairro": "Bairro Alto",
-        "cidade": "Curitiba",
-        "estado": "PR"
-      },
-      "gerente": "111.222.333-44",
-      "telefone": "41997848601",
-      "salario": 10,
-      "limite": 5,
-      "saldo": 0,
-      "senha": "1234"
+      "salario": 200,
+      "id": "2766"
     },
     {
       "numeroConta": "5",
@@ -118,6 +101,26 @@
       "numeroConta": "5",
       "valor": 20,
       "id": "PA-VqbC"
+    },
+    {
+      "numeroConta": "1234",
+      "valor": 15,
+      "id": "_CGbHI8"
+    },
+    {
+      "numeroConta": "1234",
+      "valor": 15,
+      "id": "tC1T8dI"
+    },
+    {
+      "numeroConta": "5",
+      "valor": 15,
+      "id": "fgBBN8u"
+    },
+    {
+      "numeroConta": "5",
+      "valor": 20,
+      "id": "CAiVy7l"
     }
   ],
   "gerentes": [

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ClienteService } from '../../service/cliente/cliente.service';
 import { LoginService } from '../../service/login/login.service';
 import { Subscription } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Router } from '@angular/router'; // Adicionar importação do Router
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-cliente-home',
@@ -15,33 +15,29 @@ export class ClienteHomeComponent implements OnInit, OnDestroy {
   nome: string = '';
   saldo: number = 0;
 
-  usuarioLogado: string = '';
   showHeader: boolean = true;
   private subscription: Subscription | undefined;
 
-  constructor(private http: HttpClient, private clienteService: ClienteService, private loginService: LoginService) {}
+  constructor(
+    private http: HttpClient,
+    private clienteService: ClienteService,
+    private loginService: LoginService,
+    private router: Router // Injeção do Router no construtor
+  ) {}
 
   ngOnInit(): void {
     if (this.loginService.isUsuarioLogado()) {
-      this.http.get<any>('http://localhost:3000/clientes').subscribe((data) => {
-        if (data && data.clientes && data.clientes.length > 0) {
-          const loginData = data.clientes.find((cliente: any) => cliente.email && cliente.senha);
-          if (loginData) {
-            this.loadClientData(loginData);
-            this.usuarioLogado = loginData.email; // Update the logged-in user
-          } else {
-            console.log("Login incorreto");
-          }
-        } else {
-          console.log("Dados de clientes não encontrados");
-          // Handle the scenario where client data is not found
-          // For example, display an error message or redirect to the login page
-        }
-      });
+      const clienteLogado = this.loginService.getClienteLogado();
+      if (clienteLogado) {
+        this.nome = clienteLogado.nome;
+        this.saldo = clienteLogado.saldo;
+      } else {
+        console.log("Cliente logado não encontrado. Redirecionando para login.");
+        this.router.navigate(['/login']); // Usar o Router para redirecionar
+      }
     } else {
-      console.log("Usuário não está logado");
-      // Handle the scenario where the user is not logged in
-      // For example, redirect to the login page
+      console.log("Usuário não está logado. Redirecionando para login.");
+      this.router.navigate(['/login']); // Usar o Router para redirecionar
     }
   }
 
@@ -49,15 +45,5 @@ export class ClienteHomeComponent implements OnInit, OnDestroy {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
-  }
-
-  loadClientData(loginData: any): void {
-    this.nome = loginData.nome; // Update the logged-in user's name
-    this.saldo = loginData.saldo; // Update the logged-in user's balance
-  }
-
-  private getClientId(loginData: any): string {
-    // Lógica para obter o ID do cliente logado a partir dos dados de login
-    return loginData.id;
   }
 }

@@ -23,9 +23,9 @@ export class ClienteService {
   }
 
   // Método para alterar o perfil do cliente
-  alterarPerfil(dados: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}perfil`, dados);
-  }
+  alterarPerfil(clienteID: string, dados: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}clientes/${clienteID}`, dados);
+  }  
 
   depositar(numeroConta: string, valor: number): Observable<any> {
     const dadosDeposito = { numeroConta, valor };
