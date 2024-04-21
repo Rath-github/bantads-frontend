@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { HttpClient } from '@angular/common/http';
 import { switchMap } from 'rxjs/operators';
 import { ClienteService } from '../../service/cliente/cliente.service';
@@ -20,14 +22,18 @@ export class AutocadastroComponent {
   sucesso : boolean = false;
   erro : boolean = false;
   contaExistente : boolean = false;
+
+  showHeader: boolean = true;
   
   constructor(private clienteService: ClienteService, 
               private autocadastroService: AutocadastroService,
               private gerenteService : GerenteService,  
+              private router: Router,
               private http: HttpClient) 
             { }
 
   ngOnInit(): void {
+    this.showHeader = !['/login', '/autocadastro'].includes(this.router.url);
     this.autocadastroService.cpfUsuario$.subscribe((novoValor) => {
       this.novoCliente.cpf = novoValor;
     });}

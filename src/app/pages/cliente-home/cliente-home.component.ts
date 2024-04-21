@@ -16,7 +16,7 @@ export class ClienteHomeComponent implements OnInit, OnDestroy {
   saldo: number = 0;
 
   usuarioLogado: string = '';
-
+  showHeader: boolean = true;
   private subscription: Subscription | undefined;
 
   constructor(private http: HttpClient, private clienteService: ClienteService, private loginService: LoginService) {}

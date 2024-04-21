@@ -26,10 +26,11 @@ export const routes: Routes = [
   { path: 'saque', component: SaqueComponent },
   { path: 'transferencia', component: TransferenciaComponent },
   { path: 'extrato', component: ConsultaExtratoComponent },
-  { path: 'HomeAdmin', component: HomeAdminComponent },
-  { path: 'GerenciarGerente', component: GerenciarGerenteComponent },
+  { path: 'admin/HomeAdmin', component: HomeAdminComponent },
+  { path: 'admin/GerenciarGerente', component: GerenciarGerenteComponent },
   { path: 'gerente/HomeGerente', component: GerenteHomeComponent},
   { path: 'gerente/consultar-cliente', component: ConsultarClienteComponent },
+  { path: 'gerente/consultar-cliente-todos', component: ConsultarClienteTodosComponent },
   { path: 'gerente/consultarClienteMelhores', component: ConsultarClienteMelhoresComponent },
   
   { path: '', redirectTo: '/login', pathMatch: 'full' },

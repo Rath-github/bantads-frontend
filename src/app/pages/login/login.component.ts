@@ -17,8 +17,14 @@ export class LoginComponent {
   cpfInserido! : string;
   cpfValido : boolean = true;
 
+  showHeader: boolean = true;
+
   constructor(private loginService: LoginService, private autocadastroService: AutocadastroService, private router: Router ) { }
 
+  ngOnInit() {
+    this.showHeader = !['/login', '/autocadastro'].includes(this.router.url);
+  }
+  
   login(): void {
     const loginData = {
       email: this.email,
