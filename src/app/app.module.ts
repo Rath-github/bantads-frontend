@@ -21,6 +21,7 @@ import { GerenteHomeComponent } from './pages/gerente/gerente-home/gerente-home.
 import { RelatorioClientesComponent } from './pages/admin/relatorio-clientes/relatorio-clientes.component';
 import { ConsultarClienteComponent } from './pages/gerente/consultar-cliente/consultar-cliente.component';
 import { ConsultarClienteTodosComponent } from './pages/gerente/consultar-cliente-todos/consultar-cliente-todos.component';
+import { ConsultarClienteMelhoresComponent } from './pages/gerente/consultar-cliente-melhores/consultar-cliente-melhores.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ConsultarClienteTodosComponent } from './pages/gerente/consultar-client
     RelatorioClientesComponent,
     ConsultarClienteComponent,
     ConsultarClienteTodosComponent,
+    ConsultarClienteMelhoresComponent,
   ],
   imports: [
     BrowserModule,
