@@ -1,0 +1,53 @@
+<div *ngIf="pedidosAutocadastro" class="p-8">
+  <h2 class="text-2xl font-bold mb-4">Gerente - Cadastros Pendentes</h2>
+
+  <table style="margin-bottom: 8px;" class="table-auto w-full bg-secondary border border-gray-400 rounded-lg shadow-lg">
+      <thead class="bg-primary text-center text-white">
+          <tr>
+              <th class="px-4 py-2">Nome</th>
+              <th class="px-4 py-2">CPF</th>
+              <th class="px-4 py-2">Salário</th>
+              <th class="px-4 py-2">Ação</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let pedido of pedidosAutocadastro" class="text-center">
+              <td class="border px-4 py-2 font-bold">{{ pedido.nome }}</td>
+              <td class="border px-4 py-2 font-bold">{{ pedido.cpf }}</td>
+              <td class="border px-4 py-2 font-bold">{{ pedido.salario }}</td>
+              <td class="border px-4 py-2">
+                  <button (click)="Aprovar()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Aprovar</button>&nbsp;
+                  <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded" (click)="toggleRecusarCard()">Recusar</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  
+
+  <div *ngIf="mostrarRecusarCard">
+      <div class="bg-white border border-gray-400 rounded-lg shadow-lg">
+          <h3 class="text-lg font-bold bg-gray-200 px-4 py-2">Recusar</h3>
+          <div class="p-4">
+              <div class="mb-4">
+                  <label for="motivacao" class="block text-sm font-bold mb-2">Motivação</label>
+                  <select id="motivacao" class="block w-full bg-gray-100 border border-gray-300 rounded py-2 px-4 mb-3 focus:outline-none focus:bg-white focus:border-gray-500">
+                      <option selected>Selecione</option>
+                      <option>Motivo 1</option>
+                      <option>Motivo 2</option>
+                      <option>Outro</option>
+                  </select>
+              </div>
+              <div class="mb-4">
+                  <label for="razao" class="block text-sm font-bold mb-2">Razão</label>
+                  <input type="text" id="razao" class="block w-full bg-gray-100 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Digite aqui...">
+              </div>
+              <button style="margin-top: 8px;" (click)="Recusar()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Enviar</button>&nbsp;
+              <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" (click)="toggleRecusarCard()">Cancelar</button>
+          </div>
+      </div>
+  </div>
+
+  <button routerLink="/gerente/consultar-cliente" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Cliente</button>&nbsp;
+  <button routerLink="/gerente/consultar-cliente-todos" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Todos</button>&nbsp;
+  <button routerLink="/gerente/consultar-cliente-melhores" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-sm inline-block">Consultar Melhores</button>
+</div>

@@ -1,25 +1,46 @@
-<main class="h-screen bg-zinc-50 flex items-center justify-center">
-  
-    <form action="" class="flex flex-col gap-4 w-full max-w-xs">
-    <h1>Login</h1>
-      <div class="flex flex-col gap-1">
-        <label for="">Nome</label>
-        <input 
-          type="text" 
-          name="nome" 
-          class="border border-zinc-200 shadow-sm rounded h-10 px-3"
-        >
-      </div>
-      
-      <div class="flex flex-col gap-1">
-        <label for="">Senha</label>
-        <input 
-          type="password" 
-          name="password" 
-          class="border border-zinc-200 shadow-sm rounded h-10 px-3">
-      </div>
-      
-      <a routerLink="/clienteHome" class="bg-emerald-500 rounded font-semibold align-center text-white h-10 hover:bg-emerald-600 ">Logar</a>
-      <a routerLink="/autocadastro">auto</a>
-    </form>
+<main class="h-screen bg-slate-100 flex items-center justify-center">
+    
+    <div id="login" class="flex flex-col justify-center items-center w-1/2">
+        <div class="-mt-40">
+            <img src="/assets/logobantads.png" class="h-60">
+        </div>
+        <form action="" class="flex flex-col gap-4 w-full max-w-xs">
+            <h1 class="text-3xl font-semibold text-center mb-4 text-zinc-700">Login</h1>
+            <div class="flex flex-col gap-1">
+                <label for="">Email</label>
+                <input 
+                    type="text" 
+                    name="nome" 
+                    class="border border-zinc-200 shadow-sm rounded h-10 px-3"
+                    [(ngModel)]="email"
+                >
+            </div>
+            
+            <div class="flex flex-col gap-1">
+                <label for="">Senha</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    class="border border-zinc-200 shadow-sm rounded h-10 px-3"
+                    [(ngModel)]="password">
+            </div>
+            
+            <button (click)="login()" class="bg-emerald-500 rounded font-semibold justify-center items-center flex text-white h-10
+               hover:bg-emerald-600 ">Logar</button>
+        </form>
+    </div>
+    <div id="cadastro" class="p-10 flex flex-col justify-center items-center w-1/2">
+        <h1 class="text-3xl font-semibold font-poppins mb-4 text-zinc-700">Criar Conta</h1>
+        <div class="flex flex-col gap-1 p-3 ">
+            <label for="cpf" class="text-gray-700 text-sm " *ngIf="cpfValido">Digite seu CPF:</label>
+            <label for="cpf" class="text-red-600 text-sm " *ngIf="!cpfValido">Informe um CPF valido!:</label>
+            <input type="text" id="cpfInserido" name="cpfInserido" class="border border-zinc-200 shadow-sm rounded-md h-10 px-3 w-72" mask="000.000.000-00"  
+                   placeholder="000.000.000-00" [(ngModel)]="cpfInserido" (input)="formatarCPF()" maxlength="14">
+        </div>
+        <button (click)="irAutocadastro()"
+                class="flex h-10 rounded-lg bg-emerald-500 py-3 px-6 font-bold  text-white shadow-md transition-all hover:shadow-lg hover:bg-emerald-600 focus:opacity-85 focus:shadow-none active:opacity-85 disabled:pointer-events-none disabled:opacity-50 justify-center items-center">  
+                Continuar
+        </button>
+    </div>
   </main>
+  
