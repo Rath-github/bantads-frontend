@@ -1,13 +1,15 @@
 export class Cliente {
+  numConta: number = 0;
+  status: string = "";
   nome: string = "";
   email: string = "";
   cpf: string = "";
   endereco: any = {
-      tipo: "",
       logradouro: "",
       numero: "",
       complemento: "",
       cep: "",
+      bairro: "",
       cidade: "",
       estado: "",
     };
@@ -16,4 +18,5 @@ export class Cliente {
   salario: number = 0;
   limite : number = 0;
   saldo : number = 0;
+  senha : string = "";
 }

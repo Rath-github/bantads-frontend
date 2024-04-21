@@ -1,11 +1,12 @@
 {
   "clientes": [
     {
+      "numConta": 1,
+      "status": "pendente",
       "nome": "João Silva",
       "email": "joao@example.com",
       "cpf": "123.456.789-10",
       "endereco": {
-        "tipo": "Rua",
         "logradouro": "Rua das Flores",
         "numero": "123",
         "complemento": "Apto 101",
@@ -13,78 +14,211 @@
         "cidade": "São Paulo",
         "estado": "SP"
       },
+      "gerente": "111.222.333-44",
       "telefone": "(11) 99999-9999",
       "salario": 2000,
-      "id": "123e"
+      "limite": 1000,
+      "saldo": 4000,
+      "id": "d5d3"
     },
     {
-      "nome": "Maria Oliveira",
+      "numConta": 2,
+      "status": "ativo",
+      "nome": "Maria Souza",
       "email": "maria@example.com",
-      "cpf": "987.654.321-10",
+      "cpf": "987.654.321-00",
       "endereco": {
-        "tipo": "Avenida",
-        "logradouro": "Avenida Central",
+        "logradouro": "Avenida Principal",
         "numero": "456",
-        "complemento": "Casa",
+        "complemento": "Casa 202",
         "cep": "54321-987",
         "cidade": "Rio de Janeiro",
         "estado": "RJ"
       },
+      "gerente": "111.222.333-44",
       "telefone": "(21) 88888-8888",
-      "salario": 3000,
-      "id": "effc"
+      "salario": 2500,
+      "limite": 1500,
+      "saldo": 3000,
+      "id": "8822"
     },
     {
-      "id": "31c5"
+      "numConta": 3,
+      "status": "ativo",
+      "nome": "Carlos Oliveira",
+      "email": "carlos@example.com",
+      "cpf": "111.222.333-55",
+      "endereco": {
+        "logradouro": "Rua das Palmeiras",
+        "numero": "789",
+        "complemento": "",
+        "cep": "98765-432",
+        "cidade": "Belo Horizonte",
+        "estado": "MG"
+      },
+      "gerente": "999.888.777-66",
+      "telefone": "(31) 77777-7777",
+      "salario": 1800,
+      "limite": 1200,
+      "saldo": 2000,
+      "password": 1234,
+      "id": "1"
     },
     {
-      "id": "cb18"
+      "id": "67ad",
+      "numConta": 4,
+      "status": "pendente",
+      "nome": "igor",
+      "email": "igornathan@gmail.com",
+      "cpf": "107.677.069-00",
+      "endereco": {
+        "logradouro": "Rua Vagner Luís Boscardin",
+        "numero": "10",
+        "complemento": "",
+        "cep": "83309030",
+        "bairro": "Águas Claras",
+        "cidade": "Piraquara",
+        "estado": "PR"
+      },
+      "gerente": "111.222.333-44",
+      "telefone": "41997379627",
+      "salario": 2000,
+      "limite": 1000,
+      "saldo": 0
     },
     {
-      "id": "faa2",
-      "nome": "Thiago Dos Santos",
+      "id": "2766",
+      "numConta": 5,
+      "status": "pendente",
+      "nome": "Thiago",
       "email": "thiagodossantos315@gmail.com",
       "cpf": "109.538.619-02",
-      "salario": 20000
+      "endereco": {
+        "logradouro": "Rua Arno Feliciano de Castilho",
+        "numero": "",
+        "complemento": "",
+        "cep": "82820-010",
+        "bairro": "Bairro Alto",
+        "cidade": "Curitiba",
+        "estado": "PR"
+      },
+      "gerente": "111.222.333-44",
+      "telefone": "41997848601",
+      "salario": 10,
+      "limite": 5,
+      "saldo": 0,
+      "senha": "1234"
     },
     {
-      "nome": "Thiago",
-      "email": "thiago@gmail.com",
-      "cpf": "10953861902",
-      "salario": 1000,
-      "id": "cDOxHyk"
+      "numeroConta": "5",
+      "valor": 20,
+      "id": "f08mAGM"
+    },
+    {
+      "numeroConta": "5",
+      "valor": 20,
+      "id": "PA-VqbC"
     }
   ],
   "gerentes": [
     {
-      "nome": "Carlos Santos",
-      "email": "carlos@example.com",
+      "nome": "Maria",
       "cpf": "111.222.333-44",
-      "telefone": "(11) 77777-7777",
-      "id": "722e"
+      "email": "maria@gmail.com",
+      "telefone": "7812345678",
+      "clientes": [
+        {
+          "numConta": 1,
+          "status": "pendente",
+          "nome": "João Silva",
+          "email": "joao@example.com",
+          "cpf": "123.456.789-10",
+          "endereco": {
+            "logradouro": "Rua das Flores",
+            "numero": "123",
+            "complemento": "Apto 101",
+            "cep": "12345-678",
+            "cidade": "São Paulo",
+            "estado": "SP"
+          },
+          "gerente": "111.222.333-44",
+          "telefone": "(11) 99999-9999",
+          "salario": 2000,
+          "limite": 1000,
+          "saldo": -100
+        },
+        {
+          "numConta": 2,
+          "status": "ativo",
+          "nome": "Maria Souza",
+          "email": "maria@example.com",
+          "cpf": "987.654.321-00",
+          "endereco": {
+            "logradouro": "Avenida Principal",
+            "numero": "456",
+            "complemento": "Casa 202",
+            "cep": "54321-987",
+            "cidade": "Rio de Janeiro",
+            "estado": "RJ"
+          },
+          "gerente": "111.222.333-44",
+          "telefone": "(21) 88888-8888",
+          "salario": 2500,
+          "limite": 1500,
+          "saldo": 3000
+        }
+      ],
+      "id": "e3cb"
     },
     {
-      "nome": "Ana Oliveira",
-      "email": "ana@example.com",
-      "cpf": "555.666.777-88",
-      "telefone": "(21) 66666-6666",
-      "id": "1771"
-    },
-    {
-      "nome": "Thiago",
-      "cpf": "109.538.619-02",
-      "email": "thiagodossantos315@gmail.com",
-      "telefone": "41997848601",
-      "clientes": [],
-      "id": "dgcLaCt"
-    },
-    {
-      "nome": "Diego",
-      "cpf": "10925489498",
-      "email": "56498498498",
-      "telefone": "498498489498",
-      "clientes": [],
-      "id": "_fFqNq6"
+      "nome": "Fernanda",
+      "cpf": "999.888.777-66",
+      "email": "fernanda@example.com",
+      "telefone": "11987654321",
+      "senha": "1234",
+      "clientes": [
+        {
+          "numConta": 3,
+          "status": "ativo",
+          "nome": "Carlos Oliveira",
+          "email": "carlos@example.com",
+          "cpf": "111.222.333-55",
+          "endereco": {
+            "logradouro": "Rua das Palmeiras",
+            "numero": "789",
+            "complemento": "",
+            "cep": "98765-432",
+            "cidade": "Belo Horizonte",
+            "estado": "MG"
+          },
+          "gerente": "999.888.777-66",
+          "telefone": "(31) 77777-7777",
+          "salario": 1800,
+          "limite": 1200,
+          "saldo": 2000
+        },
+        {
+          "numConta": 4,
+          "status": "pendente",
+          "nome": "Ana Santos",
+          "email": "ana@example.com",
+          "cpf": "444.555.666-77",
+          "endereco": {
+            "logradouro": "Avenida Central",
+            "numero": "987",
+            "complemento": "Bloco B",
+            "cep": "87654-321",
+            "cidade": "Curitiba",
+            "estado": "PR"
+          },
+          "gerente": "999.888.777-66",
+          "telefone": "(41) 66666-6666",
+          "salario": 2200,
+          "limite": 1300,
+          "saldo": 3500
+        }
+      ],
+      "id": "7123"
     }
   ],
   "administrador": {
