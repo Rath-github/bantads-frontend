@@ -9,14 +9,14 @@ import { GerenteService } from '../gerente/gerente.service';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'http://localhost:3000/clientes';
   private usuarioLogado: boolean = false;
+  private clienteLogado: Cliente | null = null;
 
+  constructor(private http: HttpClient, private clienteService: ClienteService, private gerenteService: GerenteService, private router: Router) { }
 
-  constructor(private http: HttpClient, private clienteService : ClienteService,private gerenteService : GerenteService, private router: Router) { }
-
-  fazerLogin() {
+  fazerLogin(cliente: Cliente) {
     this.usuarioLogado = true;
+    this.clienteLogado = cliente;
   }
 
   fazerLogout() {
@@ -27,38 +27,25 @@ export class LoginService {
     return this.usuarioLogado;
   }
 
+  getClienteLogado(): Cliente | null {
+    return this.clienteLogado;
+  }
+
   verificaLogin(loginData: any) {
-    this.http.get<any>('http://localhost:3000/clientes').subscribe((data) => {});
-   
-    let usuarioEncontradoCliente = false;
-    let usuarioEncontradoGerente = false;
-  
     this.clienteService.carregarClientes().subscribe((clientes) => {
-      const cliente = [...clientes];
-      usuarioEncontradoCliente = cliente.some(
+      const cliente = clientes.find(
         (user) => user.email == loginData.email && user.senha == loginData.password
       );
-  
-      console.log(loginData.password);
-      console.log(loginData.email);
 
-      if (usuarioEncontradoCliente) {
+      if (cliente) {
+        this.usuarioLogado = true;
+        this.clienteLogado = cliente; // Configurar cliente logado
         this.router.navigate(['/clienteHome']);
       } else {
-        this.gerenteService.carregarGerentes().subscribe((gerentes) => {
-          const gerente = [...gerentes];
-          usuarioEncontradoGerente = gerente.some(
-            (user) => user.email === loginData.email && user.senha === loginData.password
-          );
-  
-          if (usuarioEncontradoGerente) {
-            this.router.navigate(['/gerente']);
-          } else {
-            console.log("Login incorreto");
-          }
-        });
+        // Se não encontrar um cliente, verificar gerentes ou exibir erro
+        console.log("Login incorreto");
       }
-      
     });
-  }
+}
+
 }
