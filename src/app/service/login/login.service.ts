@@ -8,19 +8,30 @@ import { GerenteService } from '../gerente/gerente.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoginService {
   private usuarioLogado: boolean = false;
   private clienteLogado: Cliente | null = null;
 
-  constructor(private http: HttpClient, private clienteService: ClienteService, private gerenteService: GerenteService, private router: Router) { }
-
-  fazerLogin(cliente: Cliente) {
-    this.usuarioLogado = true;
-    this.clienteLogado = cliente;
+  constructor(private http: HttpClient, private clienteService: ClienteService, private router: Router) {
+    // Restaurar estado do armazenamento local na inicialização
+    const cliente = localStorage.getItem('clienteLogado');
+    if (cliente) {
+      this.clienteLogado = JSON.parse(cliente);
+      this.usuarioLogado = true;
+    }
   }
 
-  fazerLogout() {
+  fazerLogin(cliente: Cliente): void {
+    this.usuarioLogado = true;
+    this.clienteLogado = cliente;
+    localStorage.setItem('clienteLogado', JSON.stringify(cliente)); // Salvar no armazenamento local
+  }
+
+  fazerLogout(): void {
     this.usuarioLogado = false;
+    this.clienteLogado = null;
+    localStorage.removeItem('clienteLogado'); // Remover do armazenamento local
   }
 
   isUsuarioLogado(): boolean {
@@ -32,9 +43,9 @@ export class LoginService {
   }
 
   verificaLogin(loginData: any) {
-    this.clienteService.carregarClientes().subscribe((clientes) => {
+    this.clienteService.carregarClientes().subscribe((clientes: any[]) => {
       const cliente = clientes.find(
-        (user) => user.email == loginData.email && user.senha == loginData.password
+        (user: { email: any; senha: any; }) => user.email == loginData.email && user.senha == loginData.password
       );
 
       if (cliente) {
@@ -47,5 +58,4 @@ export class LoginService {
       }
     });
 }
-
 }

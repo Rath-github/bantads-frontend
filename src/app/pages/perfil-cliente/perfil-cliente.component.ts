@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../../service/cliente/cliente.service';
+import { LoginService } from '../../service/login/login.service';
+import { Router } from '@angular/router'; // Adicionar importação do Router
 
 @Component({
   selector: 'app-perfil-cliente',
@@ -12,17 +14,31 @@ export class PerfilClienteComponent implements OnInit {
   novoEmail?: string;
   novoSalario?: number;
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(
+    private clienteService: ClienteService, 
+    private loginService: LoginService,
+    private router: Router // Injeção do Router no construtor
+  ) { } // Injetar LoginService
+
 
   ngOnInit(): void {
-    this.carregarPerfil();
+    if (this.loginService.isUsuarioLogado()) { // Certifique-se de que esta condição é confiável
+      this.carregarPerfil();
+    } else {
+      console.log("Usuário não está logado. Redirecionando para login.");
+      this.router.navigate(['/login']);
+    }
   }
-
+  
+  
   carregarPerfil(): void {
-    this.clienteService.getPerfil().subscribe((perfil: any) => {
-      this.perfil = perfil;
-    });
+    const clienteLogado = this.loginService.getClienteLogado();
+    if (clienteLogado) {
+      this.perfil = clienteLogado; // Obter dados do cliente logado
+      console.log('Dados do cliente logado:', this.perfil);
+    }
   }
+  
 
   alterarPerfil(): void {
     const novosDados = {
