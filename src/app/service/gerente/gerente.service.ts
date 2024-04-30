@@ -12,7 +12,7 @@ export class GerenteService {
   constructor(private http: HttpClient) { }
 
   carregarGerentes(): Observable<Gerente[]> {
-    return this.http.get<any[]>('http://localhost:3000/gerentes').pipe(
+    return this.http.get<any[]>('http://localhost:4000/gerentes').pipe(
       map(gerentes => gerentes) // O operador map simplesmente retorna os gerentes
     );
   }
