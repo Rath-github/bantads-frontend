@@ -1,0 +1,10 @@
+{
+    "administrador": [ 
+        {
+    "nome": "Fernanda Souza",
+    "email": "fernanda@example.com",
+    "cpf": "999.888.777-66",
+    "telefone": "(11) 55555-5555"
+        }
+    ]
+}
