@@ -10,6 +10,8 @@ import { SaqueComponent } from './pages/saque/saque.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { ConsultaExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
+import { RelatorioClientesComponent } from './pages/admin/relatorio-clientes/relatorio-clientes.component';
+
 import { GerenciarGerenteComponent } from './pages/admin/gerenciar-gerente/gerenciar-gerente.component';
 import { GerenteHomeComponent } from './pages/gerente/gerente-home/gerente-home.component'
 import { ConsultarClienteComponent } from './pages/gerente/consultar-cliente/consultar-cliente.component'
@@ -28,6 +30,7 @@ export const routes: Routes = [
   { path: 'extrato', component: ConsultaExtratoComponent },
   { path: 'admin/HomeAdmin', component: HomeAdminComponent },
   { path: 'admin/GerenciarGerente', component: GerenciarGerenteComponent },
+  { path: 'admin/relatorio', component: RelatorioClientesComponent },
   { path: 'gerente/HomeGerente', component: GerenteHomeComponent},
   { path: 'gerente/consultar-cliente', component: ConsultarClienteComponent },
   { path: 'gerente/consultar-cliente-todos', component: ConsultarClienteTodosComponent },
