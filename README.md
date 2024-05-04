@@ -1,32 +1,99 @@
-# Bantads
+## Bantads - Banco TADS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+**Introdução**
 
-## Tecnogia
+O Bantads é um sistema de internet banking desenvolvido para o curso de Tecnologia em Análise e Desenvolvimento de Sistemas da UFPR. O projeto utiliza arquitetura de microsserviços e segue os padrões de design mais modernos.
 
-- Angular
-- TailwindCSS
+**Tecnologias**
 
-## Development server
+* **Front-end:**
+    * Angular 16.2.1
+    * TailwindCSS
+    * zod
+* **Back-end:**
+    * Java Spring Boot
+    * Spring Data JPA
+    * PostgreSQL
+    * MongoDB
+    * RabbitMQ
+    * Docker
+* **Outros:**
+    * JSON Server
+    * Localstorage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Funcionalidades**
 
-## Code scaffolding
+O Bantads oferece diversas funcionalidades para seus usuários, divididas em três perfis:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Cliente**
 
-## Build
+* Autocadastro
+* Login/Logout
+* Tela inicial com saldo
+* Alteração de perfil
+* Depósito
+* Saque
+* Transferência
+* Consulta de extrato
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Gerente**
 
-## Running unit tests
+* Tela inicial com pedidos de autocadastro
+* Aprovar cliente
+* Rejeitar cliente
+* Consultar todos os clientes
+* Consultar cliente por CPF
+* Consultar 3 melhores clientes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Administrador**
 
-## Running end-to-end tests
+* Tela inicial com informações sobre gerentes
+* Relatório de clientes
+* CRUD de gerentes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Arquitetura**
 
-## Further help
+O Bantads é composto por diversos microsserviços independentes, cada um responsável por uma funcionalidade específica. Os microsserviços se comunicam entre si através de mensagens, utilizando o RabbitMQ. Essa arquitetura modular facilita o desenvolvimento, a manutenção e a escalabilidade do sistema.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Requisitos Não-Funcionais**
+
+* **Segurança:**
+    * Senhas criptografadas
+    * Validação de campos
+    * Máscaras de entrada
+* **Usabilidade:**
+    * Layout agradável
+    * Campos com validação
+    * Datas e valores no formato brasileiro
+    * Bancos de dados normalizados
+    * Suporte ao navegador Firefox
+
+**Observações**
+
+* O projeto segue o Modelo de Maturidade de Richardson Nível 2.
+* As transações distribuídas utilizam o padrão SAGA.
+* O microsserviço de Conta utiliza o padrão CQRS.
+* O build, a geração de imagens e a execução são automatizados por shell script.
+* O sistema foi testado no navegador Firefox.
+
+**Conclusão**
+
+O Bantads é um projeto completo e bem documentado que demonstra o conhecimento adquirido na disciplina DS152 - DAC. O sistema atende aos requisitos funcionais e não-funcionais definidos e segue as melhores práticas de desenvolvimento de software.
+
+**Links Úteis**
+
+* [Repositório GitHub](https://github.com/r94oliveira/DAC-BANTADS)
+
+**Referências**
+
+* [Artigo sobre Arquitetura de Microsserviços](https://www.martinfowler.com/articles/microservices.html)
+* Artigo sobre Padrão CQRS [URL inválido removido]
+* Artigo sobre Padrão SAGA [URL inválido removido]
+* Documentação do RabbitMQ [URL inválido removido]
+* [Documentação do Docker](https://docs.docker.com/)
+
+**Contato**
+
+Para mais informações, entre em contato com o autor do projeto:
+
+* [Nome do Autor](seu_nome@email.com)
