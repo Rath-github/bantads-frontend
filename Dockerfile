@@ -1,8 +1,13 @@
 FROM node:20
 
-RUN npm run install -g npm
-RUN npm install -g typescript@latest &&\
-    npm install -g @angular/cli@13
+LABEL maintainer="front"
+
+# Update npm to the latest version
+RUN npm install -g npm
+
+# Install global packages
+RUN npm install -g typescript@latest \
+    @angular/cli@13
 
 COPY entrypoint.sh /entrypoint.sh
 
